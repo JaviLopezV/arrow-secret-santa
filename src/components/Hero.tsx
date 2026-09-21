@@ -32,7 +32,7 @@ export function Hero({ m }: { m: Messages }) {
           maxWidth: 410,
           fontSize: 18,
           lineHeight: 1.8,
-          color: "#5f6c62",
+          color: "#65756a",
         }}
       >
         {m.hero.description}
@@ -65,7 +65,7 @@ export function Hero({ m }: { m: Messages }) {
             mx: "auto",
             textAlign: "center",
             fontSize: 13,
-            color: "#657369",
+            color: "#65756a",
             fontStyle: "italic",
           }}
         >

@@ -51,7 +51,7 @@ export function Participants({
           role="status"
           sx={{
             fontSize: 12,
-            bgcolor: "#f0f2ec",
+            bgcolor: "#e8f1e9",
             px: 1.5,
             py: 0.5,
             borderRadius: 5,
@@ -106,13 +106,13 @@ export function Participants({
             textAlign: "center",
             py: 2.5,
             px: 3,
-            border: "1px dashed #d7dace",
+            border: "1px dashed #d9cdbd",
             borderRadius: 3,
-            bgcolor: "#fafbf7",
+            bgcolor: "#fffaf1",
           }}
         >
-          <PeopleOutlineRounded sx={{ color: "#758371", mb: 0.5 }} />
-          <Typography sx={{ fontSize: 13, color: "#657369" }}>
+          <PeopleOutlineRounded sx={{ color: "#b4232f", mb: 0.5 }} />
+          <Typography sx={{ fontSize: 13, color: "#65756a" }}>
             {m.form.empty}
           </Typography>
         </Box>
@@ -135,14 +135,14 @@ export function Participants({
               direction="row"
               alignItems="center"
               spacing={1}
-              sx={{ bgcolor: "#f7f7f2", borderRadius: 2, pl: 1.5, pr: 0.5 }}
+              sx={{ bgcolor: "#fffaf1", borderRadius: 2, pl: 1.5, pr: 0.5 }}
             >
               <Avatar
                 sx={{
                   width: 30,
                   height: 30,
                   fontSize: 12,
-                  bgcolor: index % 2 ? "#e5eadf" : "#f5e0d6",
+                  bgcolor: index % 2 ? "#e8f1e9" : "#fbe5df",
                   color: "primary.main",
                 }}
               >
@@ -169,7 +169,7 @@ export function Participants({
           ))}
         </Box>
       )}
-      <Typography variant="caption" sx={{ color: "#657369" }}>
+      <Typography variant="caption" sx={{ color: "#65756a" }}>
         {m.form.limit}
       </Typography>
     </Stack>

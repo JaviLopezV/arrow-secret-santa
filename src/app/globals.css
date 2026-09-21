@@ -3,22 +3,28 @@ html {
 }
 body {
   margin: 0;
+  background: radial-gradient(
+    circle at 8% 0%,
+    #fff8e8 0%,
+    #f7efdf 42%,
+    #e7f0e8 100%
+  );
 }
 * {
   box-sizing: border-box;
 }
 ::selection {
-  background: #f5c4ae;
-  color: #243d38;
+  background: #e8b94f;
+  color: #173c2d;
 }
 .skip-link {
   position: fixed;
   left: 16px;
   top: -100px;
   z-index: 1500;
-  background: #fff;
+  background: #fff8ea;
   padding: 14px;
-  color: #243d38;
+  color: #173c2d;
 }
 .skip-link:focus {
   top: 16px;

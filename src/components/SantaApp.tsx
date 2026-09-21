@@ -44,7 +44,7 @@ export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
         </Box>
         <HowItWorks m={m} />
       </Container>
-      <Box component="footer" sx={{ borderTop: "1px solid #deded3", py: 3 }}>
+      <Box component="footer" sx={{ borderTop: "1px solid #e4d7c9", py: 3 }}>
         <Container maxWidth="lg">
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -54,7 +54,7 @@ export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
             <Typography sx={{ fontSize: 12, fontWeight: 650 }}>
               Arrow Secret Santa · {m.footer.text}
             </Typography>
-            <Typography sx={{ fontSize: 11, color: "#657369" }}>
+            <Typography sx={{ fontSize: 11, color: "#65756a" }}>
               {m.footer.privacy}
             </Typography>
           </Stack>

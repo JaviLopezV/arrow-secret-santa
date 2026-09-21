@@ -29,9 +29,9 @@ export function Setup({
     <Surface
       padding="spacious"
       sx={{
-        bgcolor: "#fffefa",
-        boxShadow: "0 18px 60px #253e3909",
-        borderColor: "#e1e3d8",
+        bgcolor: "#fffdf7",
+        boxShadow: "0 18px 60px #173c2d12",
+        borderColor: "#e4d7c9",
       }}
     >
       <Stack spacing={3}>
@@ -50,7 +50,7 @@ export function Setup({
           <Typography component="h2" variant="h2" sx={{ fontSize: 27, mt: 1 }}>
             {m.form.title}
           </Typography>
-          <Typography sx={{ fontSize: 14, color: "#657369", mt: 1 }}>
+          <Typography sx={{ fontSize: 14, color: "#65756a", mt: 1 }}>
             {m.form.description}
           </Typography>
         </Box>
@@ -141,15 +141,15 @@ export function Setup({
           </Button>
           {c.game.participants.length < 3 && (
             <Typography
-              sx={{ textAlign: "center", fontSize: 12, color: "#657369" }}
+              sx={{ textAlign: "center", fontSize: 12, color: "#65756a" }}
             >
               {m.form.minimum}
             </Typography>
           )}
         </Stack>
         <Stack direction="row" spacing={1} alignItems="flex-start">
-          <LockOutlined sx={{ fontSize: 16, color: "#657369" }} />
-          <Typography sx={{ fontSize: 11, lineHeight: 1.6, color: "#657369" }}>
+          <LockOutlined sx={{ fontSize: 16, color: "#65756a" }} />
+          <Typography sx={{ fontSize: 11, lineHeight: 1.6, color: "#65756a" }}>
             {m.form.privacy}
           </Typography>
         </Stack>

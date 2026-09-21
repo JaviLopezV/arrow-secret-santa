@@ -8,7 +8,7 @@ import "@jlopvil/mui-kit/styles.css";
 import "../globals.css";
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> };
-export const viewport: Viewport = { themeColor: "#253e39" };
+export const viewport: Viewport = { themeColor: "#1f5a43" };
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }

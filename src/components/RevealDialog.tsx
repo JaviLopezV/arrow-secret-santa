@@ -64,7 +64,7 @@ export function RevealDialog({
           <Box
             sx={{
               p: 3,
-              bgcolor: "#f9e2d5",
+              bgcolor: "#fbe5df",
               borderRadius: 5,
               color: "secondary.main",
             }}

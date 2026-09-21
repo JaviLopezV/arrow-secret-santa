@@ -16,7 +16,7 @@ export function Results({
     heading.current?.focus();
   }, []);
   return (
-    <Surface padding="spacious" sx={{ bgcolor: "#fffefa" }}>
+    <Surface padding="spacious" sx={{ bgcolor: "#fffdf7" }}>
       <Stack spacing={3}>
         <Alert severity="success">{m.results.ready}</Alert>
         <Typography

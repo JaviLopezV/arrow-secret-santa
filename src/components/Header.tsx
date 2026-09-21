@@ -15,7 +15,7 @@ import type { Locale, Messages } from "@/i18n/messages";
 export function Header({ locale, m }: { locale: Locale; m: Messages }) {
   const router = useRouter();
   return (
-    <Box component="header" sx={{ borderBottom: "1px solid #deded3" }}>
+    <Box component="header" sx={{ borderBottom: "1px solid #e4d7c9" }}>
       <Link className="skip-link" href="#main">
         {m.nav.skip}
       </Link>
