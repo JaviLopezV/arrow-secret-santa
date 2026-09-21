@@ -1,12 +1,12 @@
 # Arrow Secret Santa
 
-Aplicación Next.js + React + TypeScript con `@jlopvil/mui-kit` del proyecto hermano `../mui-component-library`. Español, catalán e inglés.
+Aplicación Next.js + React + TypeScript con `@jlopvil/mui-kit` publicada en npm. Español, catalán e inglés.
 
 Entre 3 y 30 participantes con nombre y email únicos, presupuesto, fecha y exclusiones bidireccionales. El servidor sortea y envía desde Gmail un correo individual con la persona a quien regalar. Plantillas HTML y texto, fecha y presupuesto adaptados al idioma elegido al iniciar el envío. La web nunca recibe las asignaciones.
 
 ## Desarrollo
 
-Node.js >= 22.13.0 y la biblioteca instalada en `../mui-component-library`.
+Node.js >= 22.13.0. Todas las dependencias, incluida `@jlopvil/mui-kit`, se instalan desde npm; no se necesitan carpetas externas.
 
 ```sh
 npm install
