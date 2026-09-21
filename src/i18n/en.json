@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "title": "Arrow Secret Santa · A little surprise",
+    "description": "Plan your Secret Santa in a moment. Add your group, choose exclusions and take turns revealing your gifts. No account needed.",
+    "imageAlt": "Arrow Secret Santa: a coral gift on a cream and midnight blue background."
+  },
+  "nav": {
+    "language": "Select language",
+    "how": "How it works",
+    "tag": "A little secret. A lovely surprise.",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "MORE JOY, LESS PLANNING",
+    "title": "The secret is",
+    "accent": "sharing.",
+    "description": "Bring your favourite people together. We bring the luck; you bring the magic of giving.",
+    "badge": "No sign-ups · No emails · Together",
+    "art": "A gift wrapped with love",
+    "note": "For the group that always has something to celebrate.",
+    "action": "Go to the draw"
+  },
+  "form": {
+    "eyebrow": "LET THE EXCITEMENT BEGIN",
+    "title": "Set up your Secret Santa",
+    "description": "One group, one draw and a secret for everyone.",
+    "details": "The occasion",
+    "event": "Group name (optional)",
+    "eventPlaceholder": "The Friday dinner club",
+    "budget": "Gift budget (€)",
+    "date": "Exchange date (optional)",
+    "people": "Your people",
+    "count": "people",
+    "name": "Participant name",
+    "namePlaceholder": "Who’s joining?",
+    "add": "Add",
+    "remove": "Remove",
+    "empty": "It all starts with your people. Add at least 3 participants.",
+    "limit": "3 to 30 people. Use different names or add a surname.",
+    "duplicate": "That name is already in the group. Add a surname to tell them apart.",
+    "invalidName": "Enter a name between 1 and 40 characters.",
+    "full": "The group can have up to 30 people.",
+    "exclusions": "Any pairs that shouldn’t match?",
+    "optional": "Optional",
+    "explanation": "Exclusions work in both directions. Nobody can draw themselves.",
+    "first": "First person",
+    "second": "Second person",
+    "exclude": "Exclude pair",
+    "removeExclusion": "Remove exclusion",
+    "draw": "Draw names",
+    "minimum": "Add at least 3 people to get started.",
+    "impossible": "These exclusions make a complete draw impossible. Remove a pair and try again.",
+    "privacy": "Only on this device. Your session stays in this tab; closing it may erase it.",
+    "storage": "Your session could not be restored or saved. You can play, but reloading may lose your changes."
+  },
+  "results": {
+    "eyebrow": "LET THE SURPRISE BEGIN",
+    "title": "A secret for everyone",
+    "description": "Pass the device around. Each person chooses their name, checks their result in private and hides it again.",
+    "ready": "Names drawn",
+    "progress": "results viewed",
+    "choose": "See my result",
+    "again": "View again",
+    "pending": "A surprise awaits",
+    "seen": "Viewed",
+    "dialogTitle": "Are you {name}?",
+    "dialogDescription": "Make sure nobody else is looking before opening your gift.",
+    "reveal": "Reveal who I’m gifting",
+    "gives": "You’re giving a gift to…",
+    "hide": "Hide and pass the device",
+    "cancel": "Go back without looking",
+    "secret": "Keep it secret. Time to find that perfect gift!",
+    "restart": "Start another draw",
+    "confirmTitle": "Start a new draw?",
+    "confirmText": "The group, exclusions and all results will be deleted from this tab.",
+    "confirm": "Delete and start again",
+    "keep": "Keep this draw",
+    "notice": "In-person mode: anyone with access to this tab can view the names. Keep the device within your group.",
+    "defaultEvent": "Our Secret Santa"
+  },
+  "how": {
+    "title": "Three steps. So many smiles.",
+    "subtitle": "A simple little plan to make someone’s day.",
+    "steps": [
+      {
+        "title": "Gather your people",
+        "text": "Add names, a date and your gift budget."
+      },
+      {
+        "title": "Let luck decide",
+        "text": "Set exclusions and draw names. Nobody gets themselves."
+      },
+      {
+        "title": "Reveal and surprise",
+        "text": "Check your result in private and find a thoughtful gift."
+      }
+    ]
+  },
+  "footer": {
+    "text": "Made for sharing a little joy.",
+    "privacy": "No accounts. No personal data sent to a server."
+  }
+}

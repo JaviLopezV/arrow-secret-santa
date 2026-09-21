@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+::selection {
+  background: #f5c4ae;
+  color: #243d38;
+}
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -100px;
+  z-index: 1500;
+  background: #fff;
+  padding: 14px;
+  color: #243d38;
+}
+.skip-link:focus {
+  top: 16px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

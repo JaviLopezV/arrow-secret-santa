@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "title": "Arrow Secret Santa · Amigo invisible",
+    "description": "Organiza tu amigo invisible en un momento. Añade tu grupo, elige las exclusiones y descubre los regalos por turnos, sin cuentas.",
+    "imageAlt": "Arrow Secret Santa: un regalo coral sobre un fondo crema y azul noche."
+  },
+  "nav": {
+    "language": "Seleccionar idioma",
+    "how": "Cómo funciona",
+    "tag": "Un pequeño secreto. Una gran ilusión.",
+    "skip": "Saltar al contenido"
+  },
+  "hero": {
+    "eyebrow": "MÁS ILUSIÓN, MENOS COMPLICACIONES",
+    "title": "El secreto está en",
+    "accent": "compartir.",
+    "description": "Reúne a tus personas favoritas. Nosotros ponemos el azar; vosotros, la magia del regalo.",
+    "badge": "Sin registros · Sin correos · Juntos",
+    "art": "Un regalo envuelto con cariño",
+    "note": "Para ese grupo que siempre tiene algo que celebrar.",
+    "action": "Ir al sorteo"
+  },
+  "form": {
+    "eyebrow": "QUE EMPIECE LA ILUSIÓN",
+    "title": "Prepara vuestro amigo invisible",
+    "description": "Un grupo, un sorteo y un secreto para cada persona.",
+    "details": "La ocasión",
+    "event": "Nombre del grupo (opcional)",
+    "eventPlaceholder": "La cena de los viernes",
+    "budget": "Presupuesto por regalo (€)",
+    "date": "Día del intercambio (opcional)",
+    "people": "Vuestro grupo",
+    "count": "personas",
+    "name": "Nombre del participante",
+    "namePlaceholder": "¿Quién se apunta?",
+    "add": "Añadir",
+    "remove": "Eliminar a",
+    "empty": "Todo empieza con vuestra gente. Añade al menos 3 personas.",
+    "limit": "De 3 a 30 personas. Usa nombres distintos o añade un apellido.",
+    "duplicate": "Ese nombre ya está en el grupo. Añade un apellido para distinguirlo.",
+    "invalidName": "Escribe un nombre de entre 1 y 40 caracteres.",
+    "full": "El grupo admite un máximo de 30 personas.",
+    "exclusions": "¿Hay parejas que no deben tocarse?",
+    "optional": "Opcional",
+    "explanation": "Las exclusiones funcionan en ambos sentidos. Nadie se asigna a sí mismo.",
+    "first": "Primera persona",
+    "second": "Segunda persona",
+    "exclude": "Excluir pareja",
+    "removeExclusion": "Quitar exclusión",
+    "draw": "Hacer el sorteo",
+    "minimum": "Añade al menos 3 personas para empezar.",
+    "impossible": "Estas exclusiones impiden completar el sorteo. Quita alguna pareja y vuelve a intentarlo.",
+    "privacy": "Solo en este dispositivo. La sesión se guarda en esta pestaña; al cerrarla puede perderse.",
+    "storage": "No se ha podido recuperar o guardar la sesión. Puedes jugar, pero al recargar podrías perder los cambios."
+  },
+  "results": {
+    "eyebrow": "EL AZAR YA HA HECHO SU PARTE",
+    "title": "Un secreto para cada persona",
+    "description": "Pasa el dispositivo. Cada persona elige su nombre, mira su resultado a solas y vuelve a ocultarlo.",
+    "ready": "Sorteo listo",
+    "progress": "resultados consultados",
+    "choose": "Consultar mi resultado",
+    "again": "Volver a consultar",
+    "pending": "Por descubrir",
+    "seen": "Consultado",
+    "dialogTitle": "¿Eres {name}?",
+    "dialogDescription": "Asegúrate de que nadie más esté mirando antes de abrir tu regalo.",
+    "reveal": "Descubrir a quién regalo",
+    "gives": "Te ha tocado regalar a…",
+    "hide": "Ocultar y pasar el dispositivo",
+    "cancel": "Volver sin mirar",
+    "secret": "Guarda el secreto. ¡Empieza la búsqueda del regalo!",
+    "restart": "Crear otro sorteo",
+    "confirmTitle": "¿Empezamos de nuevo?",
+    "confirmText": "Se borrarán el grupo, las exclusiones y todos los resultados de esta pestaña.",
+    "confirm": "Borrar y empezar",
+    "keep": "Conservar sorteo",
+    "notice": "Modo presencial: cualquiera con acceso a esta pestaña puede consultar los nombres. No compartas el dispositivo fuera del grupo.",
+    "defaultEvent": "Nuestro amigo invisible"
+  },
+  "how": {
+    "title": "Tres pasos. Muchas sonrisas.",
+    "subtitle": "El plan más sencillo para sorprender a los tuyos.",
+    "steps": [
+      {
+        "title": "Reúne al grupo",
+        "text": "Añade los nombres, una fecha y vuestro presupuesto."
+      },
+      {
+        "title": "Deja actuar al azar",
+        "text": "Configura las exclusiones y haz un sorteo sin autoasignaciones."
+      },
+      {
+        "title": "Descubre y sorprende",
+        "text": "Consulta tu resultado en privado y encuentra ese regalo especial."
+      }
+    ]
+  },
+  "footer": {
+    "text": "Hecho para compartir ilusión.",
+    "privacy": "Sin cuentas ni envíos de datos a un servidor."
+  }
+}
