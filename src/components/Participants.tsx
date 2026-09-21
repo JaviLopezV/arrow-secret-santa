@@ -22,10 +22,23 @@ export function Participants({
   m: Messages;
 }) {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const input = useRef<HTMLInputElement>(null);
-  const fieldError = c.error && c.error !== "impossible" ? m.form[c.error] : "";
+  const fieldError =
+    [
+      "invalidName",
+      "duplicate",
+      "invalidEmail",
+      "duplicateEmail",
+      "full",
+    ].includes(c.error) && c.error
+      ? m.form[c.error]
+      : "";
   function add() {
-    if (c.addPerson(name)) setName("");
+    if (c.addPerson(name, email)) {
+      setName("");
+      setEmail("");
+    }
     input.current?.focus();
   }
   return (
@@ -47,7 +60,7 @@ export function Participants({
           {c.game.participants.length} / 30 {m.form.count}
         </Typography>
       </Stack>
-      <Stack direction="row" spacing={1} alignItems="flex-start">
+      <Stack spacing={1} alignItems="stretch">
         <TextField
           inputRef={input}
           label={m.form.name}
@@ -64,13 +77,27 @@ export function Participants({
             }
           }}
         />
+        <TextField
+          label={m.form.email}
+          type="email"
+          value={email}
+          autoComplete="email"
+          slotProps={{ htmlInput: { maxLength: 254 } }}
+          onChange={(e) => setEmail(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+              e.preventDefault();
+              add();
+            }
+          }}
+        />
         <Button
           onClick={add}
           variant="outlined"
           aria-label={m.form.add}
           sx={{ minWidth: 56, height: 56 }}
         >
-          <AddRounded />
+          <AddRounded /> {m.form.add}
         </Button>
       </Stack>
       {c.game.participants.length === 0 ? (
@@ -125,6 +152,9 @@ export function Participants({
                 sx={{ flex: 1, fontSize: 14, overflowWrap: "anywhere" }}
               >
                 {person.name}
+                <Typography component="span" display="block" variant="caption">
+                  {person.email}
+                </Typography>
               </Typography>
               <IconButton
                 aria-label={`${m.form.remove} ${person.name}`}

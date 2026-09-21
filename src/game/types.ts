@@ -1,4 +1,4 @@
-export type Participant = { id: string; name: string };
+export type Participant = { id: string; name: string; email?: string };
 export type Exclusion = [string, string];
 export type Assignment = { giver: string; receiver: string };
 export type Game = {
@@ -9,6 +9,11 @@ export type Game = {
   exclusions: Exclusion[];
   assignments: Assignment[];
   opened: string[];
+  delivery?: {
+    id: string;
+    locale: "es" | "ca" | "en";
+    status: "pending" | "sent";
+  };
 };
 export const emptyGame: Game = {
   title: "",

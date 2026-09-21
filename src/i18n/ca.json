@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Arrow Secret Santa · Amic invisible",
-    "description": "Organitza el teu amic invisible en un moment. Afegeix el grup, tria les exclusions i descobreix els regals per torns, sense comptes.",
+    "description": "Cada participant rep el resultat per email en l’idioma seleccionat al web.",
     "imageAlt": "Arrow Secret Santa: un regal coral sobre un fons crema i blau nit."
   },
   "nav": {
@@ -15,7 +15,7 @@
     "title": "El secret és",
     "accent": "compartir.",
     "description": "Reuneix les teves persones preferides. Nosaltres hi posem l’atzar; vosaltres, la màgia del regal.",
-    "badge": "Sense registres · Sense correus · Junts",
+    "badge": "Sense registres · Per email · En privat",
     "art": "Un regal embolicat amb afecte",
     "note": "Per a aquell grup que sempre té alguna cosa per celebrar.",
     "action": "Anar al sorteig"
@@ -47,17 +47,26 @@
     "second": "Segona persona",
     "exclude": "Excloure parella",
     "removeExclusion": "Treure exclusió",
-    "draw": "Fer el sorteig",
+    "draw": "Sortejar i enviar emails",
     "minimum": "Afegeix almenys 3 persones per començar.",
     "impossible": "Aquestes exclusions impedeixen completar el sorteig. Treu alguna parella i torna-ho a provar.",
-    "privacy": "Només en aquest dispositiu. La sessió es desa en aquesta pestanya; en tancar-la es pot perdre.",
-    "storage": "No s’ha pogut recuperar o desar la sessió. Pots jugar, però en recarregar podries perdre els canvis."
+    "privacy": "Els noms i emails s’envien al servidor i al proveïdor de correu per lliurar cada resultat en privat.",
+    "storage": "No s’ha pogut recuperar o desar la sessió. Pots jugar, però en recarregar podries perdre els canvis.",
+    "email": "Email del participant",
+    "invalidEmail": "Introdueix un email vàlid.",
+    "duplicateEmail": "Aquest email ja és al grup. Fes servir un de diferent per persona.",
+    "sending": "Enviant els secrets…",
+    "retry": "Tornar a provar l’enviament",
+    "sendError": "No s’han pogut enviar alguns emails. Torna-ho a provar per continuar el mateix sorteig i ometre els enviaments confirmats.",
+    "unavailable": "L’enviament d’emails encara no està configurat. Contacta amb qui administra el web.",
+    "expired": "El termini per tornar-ho a provar ha caducat. Contacta amb qui administra el web abans de crear un altre sorteig.",
+    "uncertain": "No podem confirmar un dels enviaments. Si acaba de començar, espera i torna a consultar amb el botó. Si persisteix, contacta amb qui organitza el sorteig per revisar Gmail abans de reenviar."
   },
   "results": {
     "eyebrow": "L’ATZAR JA HA FET LA SEVA PART",
-    "title": "Un secret per a cada persona",
-    "description": "Passa el dispositiu. Cada persona tria el seu nom, mira el resultat tota sola i el torna a amagar.",
-    "ready": "Sorteig a punt",
+    "title": "Els secrets estan de camí",
+    "description": "Cada participant rep el resultat per email en l’idioma seleccionat al web.",
+    "ready": "Emails acceptats per enviar",
     "progress": "resultats consultats",
     "choose": "Consultar el meu resultat",
     "again": "Tornar a consultar",
@@ -75,7 +84,7 @@
     "confirmText": "S’esborraran el grup, les exclusions i tots els resultats d’aquesta pestanya.",
     "confirm": "Esborrar i començar",
     "keep": "Conservar sorteig",
-    "notice": "Mode presencial: qualsevol persona amb accés a aquesta pestanya pot consultar els noms. No comparteixis el dispositiu fora del grup.",
+    "notice": "Reviseu la safata d’entrada i el correu brossa. L’acceptació de l’enviament no garanteix el lliurament.",
     "defaultEvent": "El nostre amic invisible"
   },
   "how": {
@@ -84,7 +93,7 @@
     "steps": [
       {
         "title": "Reuneix el grup",
-        "text": "Afegeix els noms, una data i el vostre pressupost."
+        "text": "Afegeix el nom i email de cada persona, la data i el pressupost."
       },
       {
         "title": "Deixa actuar l’atzar",
@@ -92,12 +101,21 @@
       },
       {
         "title": "Descobreix i sorprèn",
-        "text": "Consulta el resultat en privat i troba aquell regal especial."
+        "text": "Rep el resultat per email i troba aquell regal especial."
       }
     ]
   },
   "footer": {
     "text": "Fet per compartir il·lusió.",
-    "privacy": "Sense comptes ni enviaments de dades a un servidor."
+    "privacy": "Els noms i emails s’envien al servidor i al proveïdor de correu per lliurar cada resultat en privat."
+  },
+  "email": {
+    "subject": "El teu amic invisible",
+    "hello": "Hola",
+    "gives": "T’ha tocat regalar a…",
+    "secret": "Guarda el secret. Comença la cerca del regal!",
+    "budget": "Pressupost",
+    "date": "Dia de l’intercanvi",
+    "event": "El nostre amic invisible"
   }
 }

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Arrow Secret Santa · Amigo invisible",
-    "description": "Organiza tu amigo invisible en un momento. Añade tu grupo, elige las exclusiones y descubre los regalos por turnos, sin cuentas.",
+    "description": "Cada participante recibe su resultado por email en el idioma seleccionado en la web.",
     "imageAlt": "Arrow Secret Santa: un regalo coral sobre un fondo crema y azul noche."
   },
   "nav": {
@@ -15,7 +15,7 @@
     "title": "El secreto está en",
     "accent": "compartir.",
     "description": "Reúne a tus personas favoritas. Nosotros ponemos el azar; vosotros, la magia del regalo.",
-    "badge": "Sin registros · Sin correos · Juntos",
+    "badge": "Sin registros · Por email · En privado",
     "art": "Un regalo envuelto con cariño",
     "note": "Para ese grupo que siempre tiene algo que celebrar.",
     "action": "Ir al sorteo"
@@ -47,17 +47,26 @@
     "second": "Segunda persona",
     "exclude": "Excluir pareja",
     "removeExclusion": "Quitar exclusión",
-    "draw": "Hacer el sorteo",
+    "draw": "Sortear y enviar emails",
     "minimum": "Añade al menos 3 personas para empezar.",
     "impossible": "Estas exclusiones impiden completar el sorteo. Quita alguna pareja y vuelve a intentarlo.",
-    "privacy": "Solo en este dispositivo. La sesión se guarda en esta pestaña; al cerrarla puede perderse.",
-    "storage": "No se ha podido recuperar o guardar la sesión. Puedes jugar, pero al recargar podrías perder los cambios."
+    "privacy": "Los nombres y emails se envían al servidor y al proveedor de correo para entregar cada resultado en privado.",
+    "storage": "No se ha podido recuperar o guardar la sesión. Puedes jugar, pero al recargar podrías perder los cambios.",
+    "email": "Email del participante",
+    "invalidEmail": "Introduce un email válido.",
+    "duplicateEmail": "Ese email ya está en el grupo. Usa uno distinto para cada persona.",
+    "sending": "Enviando los secretos…",
+    "retry": "Reintentar el envío",
+    "sendError": "Algunos emails no se han podido enviar. Reintenta para continuar el mismo sorteo y omitir los envíos ya confirmados.",
+    "unavailable": "El envío de emails todavía no está configurado. Contacta con quien administra la web.",
+    "expired": "El plazo de reintento ha caducado. Contacta con quien administra la web antes de crear otro sorteo.",
+    "uncertain": "No podemos confirmar uno de los envíos. Si acaba de iniciarse, espera y vuelve a consultar con el botón. Si persiste, contacta con quien organiza el sorteo para revisar Gmail antes de reenviar."
   },
   "results": {
     "eyebrow": "EL AZAR YA HA HECHO SU PARTE",
-    "title": "Un secreto para cada persona",
-    "description": "Pasa el dispositivo. Cada persona elige su nombre, mira su resultado a solas y vuelve a ocultarlo.",
-    "ready": "Sorteo listo",
+    "title": "Los secretos van de camino",
+    "description": "Cada participante recibe su resultado por email en el idioma seleccionado en la web.",
+    "ready": "Emails aceptados para envío",
     "progress": "resultados consultados",
     "choose": "Consultar mi resultado",
     "again": "Volver a consultar",
@@ -75,7 +84,7 @@
     "confirmText": "Se borrarán el grupo, las exclusiones y todos los resultados de esta pestaña.",
     "confirm": "Borrar y empezar",
     "keep": "Conservar sorteo",
-    "notice": "Modo presencial: cualquiera con acceso a esta pestaña puede consultar los nombres. No compartas el dispositivo fuera del grupo.",
+    "notice": "Revisad la bandeja de entrada y la carpeta de spam. La aceptación del envío no garantiza la entrega.",
     "defaultEvent": "Nuestro amigo invisible"
   },
   "how": {
@@ -84,7 +93,7 @@
     "steps": [
       {
         "title": "Reúne al grupo",
-        "text": "Añade los nombres, una fecha y vuestro presupuesto."
+        "text": "Añade el nombre y email de cada persona, la fecha y el presupuesto."
       },
       {
         "title": "Deja actuar al azar",
@@ -92,12 +101,21 @@
       },
       {
         "title": "Descubre y sorprende",
-        "text": "Consulta tu resultado en privado y encuentra ese regalo especial."
+        "text": "Recibe tu resultado por email y encuentra ese regalo especial."
       }
     ]
   },
   "footer": {
     "text": "Hecho para compartir ilusión.",
-    "privacy": "Sin cuentas ni envíos de datos a un servidor."
+    "privacy": "Los nombres y emails se envían al servidor y al proveedor de correo para entregar cada resultado en privado."
+  },
+  "email": {
+    "subject": "Tu amigo invisible",
+    "hello": "Hola",
+    "gives": "Te ha tocado regalar a…",
+    "secret": "Guarda el secreto. ¡Empieza la búsqueda del regalo!",
+    "budget": "Presupuesto",
+    "date": "Día del intercambio",
+    "event": "Nuestro amigo invisible"
   }
 }

@@ -1,6 +1,7 @@
+import { validEmail } from "./email.ts";
 import { emptyGame, MAX_PARTICIPANTS, type Game } from "./types.ts";
 
-export const storageKey = "arrow-secret-santa:session:v1";
+export const storageKey = "arrow-secret-santa:session:v2";
 
 function validDate(value: string): boolean {
   if (value === "") return true;
@@ -31,7 +32,8 @@ export function parseGame(raw: string | null): Game {
         p.id.length > 0 &&
         typeof p.name === "string" &&
         p.name.trim().length > 0 &&
-        p.name.length <= 40,
+        p.name.length <= 40 &&
+        (p.email === undefined || validEmail(p.email)),
     ) ||
     !Array.isArray(value.exclusions) ||
     !Array.isArray(value.assignments) ||
@@ -82,5 +84,12 @@ export function parseGame(raw: string | null): Game {
   }
   if (!assignments.length && value.opened.length)
     throw new Error("Invalid progress");
+  if (
+    value.delivery &&
+    (!/^[0-9a-f-]{36}$/.test(value.delivery.id) ||
+      !["es", "ca", "en"].includes(value.delivery.locale) ||
+      !["pending", "sent"].includes(value.delivery.status))
+  )
+    throw new Error("Invalid delivery");
   return value;
 }

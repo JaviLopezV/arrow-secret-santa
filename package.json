@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "verify:metadata": "node scripts/verify-metadata.mjs"
+    "verify:metadata": "node scripts/verify-metadata.mjs",
+    "preview:emails": "node --experimental-strip-types scripts/preview-emails.mjs",
+    "verify:gmail": "node --experimental-strip-types scripts/verify-gmail.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,13 +19,16 @@
     "@jlopvil/mui-kit": "file:../mui-component-library",
     "@mui/icons-material": "^7.3.11",
     "@mui/material": "^7.3.11",
+    "@upstash/redis": "^1.39.0",
     "next": "^15.5.24",
+    "nodemailer": "^10.0.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^22.15.3",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "eslint": "^9.24.0",

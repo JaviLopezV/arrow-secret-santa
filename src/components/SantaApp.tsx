@@ -10,7 +10,7 @@ import { Results } from "./Results";
 import { HowItWorks } from "./HowItWorks";
 
 export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
-  const controller = useGame();
+  const controller = useGame(locale);
   return (
     <>
       <Header locale={locale} m={m} />
@@ -35,7 +35,7 @@ export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
             sx={{ scrollMarginTop: 24 }}
             aria-busy={!controller.ready}
           >
-            {controller.game.assignments.length ? (
+            {controller.game.delivery?.status === "sent" ? (
               <Results controller={controller} m={m} locale={locale} />
             ) : (
               <Setup controller={controller} m={m} />

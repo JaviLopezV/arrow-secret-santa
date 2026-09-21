@@ -54,74 +54,90 @@ export function Setup({
             {m.form.description}
           </Typography>
         </Box>
-        <Stack spacing={2}>
-          <TextField
-            label={m.form.event}
-            placeholder={m.form.eventPlaceholder}
-            value={c.game.title}
-            onChange={(e) => c.update({ title: e.target.value })}
-            slotProps={{ htmlInput: { maxLength: 80 } }}
-          />
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: { xs: "1fr", sm: "1fr 1.2fr" },
-              gap: 2,
-            }}
-          >
+        <Box
+          component="fieldset"
+          disabled={c.sending || !!c.game.delivery}
+          sx={{
+            border: 0,
+            p: 0,
+            m: 0,
+            minWidth: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: 3,
+          }}
+        >
+          <Stack spacing={2}>
             <TextField
-              label={m.form.budget}
-              placeholder="25"
-              value={c.game.budget}
-              slotProps={{
-                inputLabel: { shrink: true },
-                htmlInput: { inputMode: "decimal", maxLength: 7 },
-              }}
-              onChange={(e) => {
-                const value = e.target.value.replace(",", ".");
-                if (/^(|\d{1,4}(\.\d{0,2})?)$/.test(value))
-                  c.update({ budget: value });
-              }}
-              onBlur={() => {
-                if (c.game.budget.endsWith("."))
-                  c.update({ budget: c.game.budget.slice(0, -1) });
-              }}
+              label={m.form.event}
+              placeholder={m.form.eventPlaceholder}
+              value={c.game.title}
+              onChange={(e) => c.update({ title: e.target.value })}
+              slotProps={{ htmlInput: { maxLength: 80 } }}
             />
-            <TextField
-              type="date"
-              label={m.form.date}
-              value={c.game.date}
-              onChange={(e) => {
-                if (
-                  /^(|\d{4}-\d{2}-\d{2})$/.test(e.target.value) &&
-                  (!e.target.value || e.target.value >= today)
-                )
-                  c.update({ date: e.target.value });
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", sm: "1fr 1.2fr" },
+                gap: 2,
               }}
-              slotProps={{
-                inputLabel: { shrink: true },
-                htmlInput: { min: today, max: "9999-12-31" },
-              }}
-            />
-          </Box>
-        </Stack>
-        <Divider />
-        <Participants controller={c} m={m} />
-        <Exclusions controller={c} m={m} />
-        {c.error === "impossible" && (
-          <Alert severity="error">{m.form.impossible}</Alert>
-        )}
+            >
+              <TextField
+                label={m.form.budget}
+                placeholder="25"
+                value={c.game.budget}
+                slotProps={{
+                  inputLabel: { shrink: true },
+                  htmlInput: { inputMode: "decimal", maxLength: 7 },
+                }}
+                onChange={(e) => {
+                  const value = e.target.value.replace(",", ".");
+                  if (/^(|\d{1,4}(\.\d{0,2})?)$/.test(value))
+                    c.update({ budget: value });
+                }}
+                onBlur={() => {
+                  if (c.game.budget.endsWith("."))
+                    c.update({ budget: c.game.budget.slice(0, -1) });
+                }}
+              />
+              <TextField
+                type="date"
+                label={m.form.date}
+                value={c.game.date}
+                onChange={(e) => {
+                  if (
+                    /^(|\d{4}-\d{2}-\d{2})$/.test(e.target.value) &&
+                    (!e.target.value || e.target.value >= today)
+                  )
+                    c.update({ date: e.target.value });
+                }}
+                slotProps={{
+                  inputLabel: { shrink: true },
+                  htmlInput: { min: today, max: "9999-12-31" },
+                }}
+              />
+            </Box>
+          </Stack>
+          <Divider />
+          <Participants controller={c} m={m} />
+          <Exclusions controller={c} m={m} />
+        </Box>
+        {c.error && <Alert severity="error">{m.form[c.error]}</Alert>}
         <Stack spacing={1}>
           <Button
             variant="contained"
             size="large"
             fullWidth
             endIcon={<ArrowForwardRounded />}
-            disabled={!c.ready || c.game.participants.length < 3}
+            disabled={!c.ready || c.sending || c.game.participants.length < 3}
             onClick={c.start}
             sx={{ minHeight: 56 }}
           >
-            {m.form.draw}
+            {c.sending
+              ? m.form.sending
+              : c.game.delivery
+                ? m.form.retry
+                : m.form.draw}
           </Button>
           {c.game.participants.length < 3 && (
             <Typography

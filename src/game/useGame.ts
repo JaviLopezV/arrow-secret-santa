@@ -1,13 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { draw } from "./draw";
+import { useEffect, useRef, useState } from "react";
+import { validEmail } from "./email";
+import type { Locale } from "@/i18n/messages";
 import { emptyGame, MAX_PARTICIPANTS, type Game } from "./types";
 import { parseGame, storageKey } from "./storage";
 
-type FormError = "duplicate" | "invalidName" | "full" | "impossible" | "";
+type FormError =
+  | "duplicate"
+  | "invalidName"
+  | "full"
+  | "impossible"
+  | "invalidEmail"
+  | "duplicateEmail"
+  | "sendError"
+  | "unavailable"
+  | "uncertain"
+  | "expired"
+  | "";
 
-export function useGame() {
+export function useGame(locale: Locale) {
+  const busy = useRef(false);
+  const [sending, setSending] = useState(false);
   const [game, setGame] = useState<Game>(emptyGame);
   const [ready, setReady] = useState(false);
   const [storageError, setStorageError] = useState(false);
@@ -29,7 +43,16 @@ export function useGame() {
     }
   }, [game, ready]);
 
-  function addPerson(name: string): boolean {
+  function addPerson(name: string, email: string): boolean {
+    const address = email.trim().toLowerCase();
+    if (!validEmail(address)) {
+      setError("invalidEmail");
+      return false;
+    }
+    if (game.participants.some((p) => p.email === address)) {
+      setError("duplicateEmail");
+      return false;
+    }
     const clean = name.trim().replace(/\s+/g, " ").normalize("NFC");
     if (!clean || clean.length > 40) {
       setError("invalidName");
@@ -51,7 +74,7 @@ export function useGame() {
       ...current,
       participants: [
         ...current.participants,
-        { id: crypto.randomUUID(), name: clean },
+        { id: crypto.randomUUID(), name: clean, email: address },
       ],
     }));
     setError("");
@@ -79,14 +102,56 @@ export function useGame() {
     }));
     setError("");
   }
-  function start() {
-    const assignments = draw(game.participants, game.exclusions);
-    if (!assignments) {
-      setError("impossible");
+  async function start() {
+    if (busy.current) return;
+    busy.current = true;
+    setSending(true);
+    setError("");
+    const delivery = game.delivery ?? {
+      id: crypto.randomUUID(),
+      locale,
+      status: "pending" as const,
+    };
+    const snapshot = { ...game, assignments: [], opened: [], delivery };
+    // Save the retry key before any request can leave the browser.
+    try {
+      sessionStorage.setItem(storageKey, JSON.stringify(snapshot));
+    } catch {
+      setStorageError(true);
+      setError("sendError");
+      busy.current = false;
+      setSending(false);
       return;
     }
-    setGame((current) => ({ ...current, assignments, opened: [] }));
-    setError("");
+    setGame(snapshot);
+    try {
+      const response = await fetch("/api/draw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          game: snapshot,
+          locale: delivery.locale,
+          id: delivery.id,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        setError(
+          ["impossible", "unavailable", "expired", "uncertain"].includes(result.error)
+            ? result.error
+            : "sendError",
+        );
+        if (result.error === "impossible" || result.error === "unavailable")
+          setGame({ ...snapshot, delivery: undefined });
+        return;
+      }
+      setGame({ ...snapshot, delivery: { ...delivery, status: "sent" } });
+    } catch {
+      setError("sendError");
+    } finally {
+      busy.current = false;
+      setSending(false);
+    }
   }
   function reset() {
     setGame({ ...emptyGame });
@@ -94,6 +159,7 @@ export function useGame() {
   }
   return {
     game,
+    sending,
     ready,
     storageError,
     error,
