@@ -165,5 +165,56 @@
     "privateText": "Cada persona descobreix només a qui li toca regalar.",
     "step": "Pas",
     "of": "de"
+  },
+  "festive": {
+    "draw": "Sorteig",
+    "gifts": "Idees de regal",
+    "eyebrow": "Una mica de màgia, entre amics",
+    "title": "El taller de les sorpreses",
+    "description": "Els millors regals diuen: «he pensat en tu». Troba una idea per a aquella persona tan especial.",
+    "all": "Totes",
+    "food": "Per assaborir",
+    "home": "A casa",
+    "creative": "Amb imaginació",
+    "experiences": "Plans junts",
+    "tipTitle": "El toc del follet",
+    "tip": "Afegeix una nota amb un record vostre. De vegades, aquest és el millor regal.",
+    "note": "Inspiració per adaptar al vostre pressupost.",
+    "elfNote": "El teu equip de follets ja està a punt.",
+    "items": [
+      {
+        "title": "Kit de xocolata calenta",
+        "description": "Cacau, núvols de sucre i una tassa per a les tardes de sofà."
+      },
+      {
+        "title": "Un esmorzar a mida",
+        "description": "Prepara una capseta amb els seus sabors preferits."
+      },
+      {
+        "title": "Un racó de calma",
+        "description": "Una espelma i una llista de música feta per tu."
+      },
+      {
+        "title": "Mitjons amb personalitat",
+        "description": "Un estampat que només el vostre grup entendria."
+      },
+      {
+        "title": "Un quadern d’idees",
+        "description": "Pàgines en blanc i retoladors per començar una cosa bonica."
+      },
+      {
+        "title": "Un àlbum de la vostra història",
+        "description": "Fotos, anècdotes i algun moment de vergonya compartida."
+      },
+      {
+        "title": "Val per una tarda junts",
+        "description": "Un passeig, un berenar i els mòbils desats."
+      },
+      {
+        "title": "Nit de jocs",
+        "description": "Un joc de cartes i el seu aperitiu preferit."
+      }
+    ],
+    "navigation": "Navegació principal"
   }
 }

@@ -11,7 +11,8 @@ import ArrowForwardRounded from "@mui/icons-material/ArrowForwardRounded";
 import ArrowBackRounded from "@mui/icons-material/ArrowBackRounded";
 import CheckRounded from "@mui/icons-material/CheckRounded";
 import LockOutlined from "@mui/icons-material/LockOutlined";
-import type { Messages } from "@/i18n/messages";
+import { LegalLinks } from "./LegalLinks";
+import type { Locale, Messages } from "@/i18n/messages";
 import type { GameController } from "@/game/useGame";
 import { Participants } from "./Participants";
 import { Exclusions } from "./Exclusions";
@@ -19,9 +20,11 @@ import { Exclusions } from "./Exclusions";
 export function Setup({
   controller: c,
   m,
+  locale,
 }: {
   controller: GameController;
   m: Messages;
+  locale: Locale;
 }) {
   const [step, setStep] = useState(0);
   const active = c.game.delivery ? 2 : step;
@@ -81,6 +84,7 @@ export function Setup({
           </h2>
           <p>{descriptions[active]}</p>
         </div>
+        <LegalLinks locale={locale} notice />
         <Box
           component="fieldset"
           disabled={locked}
@@ -138,84 +142,7 @@ export function Setup({
               <Exclusions controller={c} m={m} />
             </Stack>
           )}
-          {active === 2 && (
-            <Stack spacing={3}>
-              <div className="review-block">
-                <div className="review-heading">
-                  <strong>{c.game.title || m.results.defaultEvent}</strong>
-                  <Button size="small" onClick={() => setStep(1)}>
-                    {m.ui.edit}
-                  </Button>
-                </div>
-                <dl className="review-details">
-                  <div>
-                    <dt>{m.email.budget}</dt>
-                    <dd>
-                      {c.game.budget ? `${c.game.budget} €` : m.ui.noDetails}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>{m.email.date}</dt>
-                    <dd>
-                      {c.game.date
-                        ? c.game.date.split("-").reverse().join(" / ")
-                        : m.ui.noDetails}
-                    </dd>
-                  </div>
-                </dl>
-                {c.game.exclusions.length > 0 && (
-                  <div className="review-exclusions">
-                    <strong>{m.form.exclusions}</strong>
-                    {c.game.exclusions.map((pair) => (
-                      <p key={pair.join()}>
-                        {pair
-                          .map(
-                            (id) =>
-                              c.game.participants.find((p) => p.id === id)
-                                ?.name,
-                          )
-                          .join(" ↔ ")}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div>
-                <div className="review-heading">
-                  <strong>
-                    {c.game.participants.length} {m.form.count}
-                  </strong>
-                  <Button size="small" onClick={() => setStep(0)}>
-                    {m.ui.edit}
-                  </Button>
-                </div>
-                <ul className="review-people">
-                  {c.game.participants.map((p) => (
-                    <li key={p.id}>
-                      <span className="person-initial">
-                        {p.name.slice(0, 1).toUpperCase()}
-                      </span>
-                      <div>
-                        <strong>{p.name}</strong>
-                        <span>{p.email}</span>
-                      </div>
-                      <CheckRounded
-                        sx={{
-                          color: "primary.main",
-                          fontSize: 18,
-                          ml: "auto",
-                          flexShrink: 0,
-                        }}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Typography variant="body2" color="text.secondary">
-                {m.ui.reviewNote}
-              </Typography>
-            </Stack>
-          )}
+          {active === 2 && <ReviewStep c={c} m={m} onEdit={setStep} />}
         </Box>
         {c.error &&
           ![
@@ -269,5 +196,90 @@ export function Setup({
         <span>{m.form.privacy}</span>
       </div>
     </section>
+  );
+}
+
+function ReviewStep({
+  c,
+  m,
+  onEdit,
+}: {
+  c: GameController;
+  m: Messages;
+  onEdit: (step: number) => void;
+}) {
+  return (
+    <Stack spacing={3}>
+      <div className="review-block">
+        <div className="review-heading">
+          <strong>{c.game.title || m.results.defaultEvent}</strong>
+          <Button size="small" onClick={() => onEdit(1)}>
+            {m.ui.edit}
+          </Button>
+        </div>
+        <dl className="review-details">
+          <div>
+            <dt>{m.email.budget}</dt>
+            <dd>{c.game.budget ? `${c.game.budget} €` : m.ui.noDetails}</dd>
+          </div>
+          <div>
+            <dt>{m.email.date}</dt>
+            <dd>
+              {c.game.date
+                ? c.game.date.split("-").reverse().join(" / ")
+                : m.ui.noDetails}
+            </dd>
+          </div>
+        </dl>
+        {c.game.exclusions.length > 0 && (
+          <div className="review-exclusions">
+            <strong>{m.form.exclusions}</strong>
+            {c.game.exclusions.map((pair) => (
+              <p key={pair.join()}>
+                {pair
+                  .map(
+                    (id) => c.game.participants.find((p) => p.id === id)?.name,
+                  )
+                  .join(" ↔ ")}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
+      <div>
+        <div className="review-heading">
+          <strong>
+            {c.game.participants.length} {m.form.count}
+          </strong>
+          <Button size="small" onClick={() => onEdit(0)}>
+            {m.ui.edit}
+          </Button>
+        </div>
+        <ul className="review-people">
+          {c.game.participants.map((p) => (
+            <li key={p.id}>
+              <span className="person-initial">
+                {p.name.slice(0, 1).toUpperCase()}
+              </span>
+              <div>
+                <strong>{p.name}</strong>
+                <span>{p.email}</span>
+              </div>
+              <CheckRounded
+                sx={{
+                  color: "primary.main",
+                  fontSize: 18,
+                  ml: "auto",
+                  flexShrink: 0,
+                }}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Typography variant="body2" color="text.secondary">
+        {m.ui.reviewNote}
+      </Typography>
+    </Stack>
   );
 }

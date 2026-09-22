@@ -86,3 +86,16 @@ npm run verify:metadata
 ```
 
 La verificación comprueba las tres traducciones, H1, contenido visible, enlaces, datos estructurados, canonical, hreflang e imágenes sociales. No envía emails ni solicitudes de indexación.
+
+## Documentación legal
+
+Los textos públicos están en `/es/legal/aviso-legal`, `/es/legal/privacidad`,
+`/es/legal/cookies` y `/es/legal/condiciones`, enlazados desde los tres idiomas
+(documentos en español). El [expediente interno](docs/legal/README.md) recoge el
+registro de tratamientos, conservación, proveedores, derechos e incidentes.
+
+Antes de publicar, completa las variables `LEGAL_*` de `.env.example` y sigue
+[el cierre de publicación](docs/legal/publicacion.md). Los campos no confirmados
+se muestran como pendientes y mantienen los documentos en estado de borrador.
+Configura `NEXT_PUBLIC_SITE_URL` para incluir el enlace absoluto de privacidad en
+los correos. Configurar plazos en los textos no implanta el borrado en los sistemas.

@@ -383,3 +383,463 @@ body {
   color: #627066;
   font-size: 14px;
 }
+
+/* The elves' workshop */
+body {
+  background: #faf7ef;
+  background-image: radial-gradient(#d7d9c866 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+[hidden] {
+  display: none !important;
+}
+.app-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: -12px auto 36px;
+  padding: 6px;
+  background: #eeeee3;
+  border: 1px solid #e1e3d6;
+  border-radius: 18px;
+}
+.app-navigation button {
+  border: 0;
+  background: transparent;
+  color: #596b5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 24px;
+  border-radius: 13px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.app-navigation button[aria-current] {
+  background: #215940;
+  color: white;
+  box-shadow: 0 3px 8px #173c2d15;
+}
+.intro .eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  color: #a14a3b;
+}
+.intro h1 {
+  color: #214f3b;
+}
+.workshop-decoration {
+  margin-top: 24px;
+  max-width: 410px;
+  text-align: center;
+}
+.elf-workshop {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.workshop-decoration > span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #66755d;
+}
+.draw-card {
+  position: relative;
+  border-color: #dde1d2;
+  box-shadow: 0 15px 45px #3a49270a;
+  overflow: clip;
+}
+.draw-card::before {
+  content: "";
+  display: block;
+  height: 7px;
+  background: repeating-linear-gradient(
+    125deg,
+    #bd5047 0 12px,
+    #fff2db 12px 24px
+  );
+}
+.step-nav {
+  background: #fdfcf7;
+}
+.step-nav button[aria-current] {
+  background: #e5eddd;
+}
+.privacy-card {
+  background: #eef1e4;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #e0e6d4;
+}
+.privacy-card p {
+  margin-bottom: 0;
+}
+.gift-workshop {
+  max-width: 1040px;
+  margin: auto;
+}
+.gift-intro {
+  text-align: center;
+  max-width: 610px;
+  margin: 0 auto 28px;
+}
+.gift-intro .eyebrow {
+  color: #a14a3b;
+}
+.gift-intro h1 {
+  color: #214f3b;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  margin: 14px 0;
+}
+.gift-intro p {
+  color: #627066;
+  line-height: 1.7;
+  font-size: 16px;
+}
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.category-filters button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  padding: 10px 18px;
+  min-height: 44px;
+  border: 1px solid #dce2d5;
+  border-radius: 30px;
+  background: #fffdf8;
+  color: #435d4b;
+  cursor: pointer;
+}
+.category-filters button[aria-pressed="true"] {
+  background: #215940;
+  border-color: #215940;
+  color: white;
+}
+.category-filters button:hover {
+  border-color: #215940;
+}
+.gift-note {
+  text-align: center;
+  font-size: 12px;
+  color: #687565;
+  margin: 18px 0 26px;
+}
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.gift-card {
+  background: #fffefa;
+  border: 1px solid #e2e3d7;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.gift-art {
+  height: 155px;
+  background: #f4e2d2;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.gift-art > span {
+  font-size: 64px;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 8px 3px #473b2912);
+  transition: transform 0.2s ease;
+}
+.gift-card:hover .gift-art > span {
+  transform: rotate(5deg) translateY(-4px);
+}
+.gift-art i {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  color: #a36e43;
+  font-size: 24px;
+  font-style: normal;
+}
+.gift-art i:last-child {
+  top: auto;
+  right: auto;
+  left: 28px;
+  bottom: 25px;
+  font-size: 19px;
+}
+.gift-home .gift-art {
+  background: #e5ead8;
+}
+.gift-creative .gift-art {
+  background: #eae3ef;
+}
+.gift-experiences .gift-art {
+  background: #f5eac9;
+}
+.gift-copy {
+  padding: 20px;
+}
+.gift-copy .eyebrow {
+  font-size: 9px;
+}
+.gift-copy h2 {
+  font-size: 18px;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  margin: 8px 0;
+}
+.gift-copy p {
+  font-size: 13px;
+  color: #627066;
+  line-height: 1.65;
+  margin: 0;
+}
+.elf-tip {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #edf0e2;
+  border: 1px dashed #bdc9ac;
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-top: 26px;
+}
+.elf-tip > span {
+  font-size: 36px;
+  color: #a8792e;
+}
+.elf-tip strong {
+  font-size: 14px;
+}
+.elf-tip p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #627066;
+}
+@media (max-width: 899px) {
+  .intro {
+    position: relative;
+    padding-right: 150px;
+    min-height: 145px;
+  }
+  .intro h1 {
+    font-size: 32px;
+  }
+  .intro .eyebrow {
+    font-size: 9px;
+    margin-bottom: 10px;
+  }
+  .workshop-decoration {
+    position: absolute;
+    width: 165px;
+    right: -8px;
+    bottom: 0;
+    margin: 0;
+  }
+  .workshop-decoration > span {
+    display: none;
+  }
+  .gift-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 599px) {
+  .app-navigation {
+    position: fixed;
+    z-index: 1100;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    background: #fffdf9;
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+    box-shadow: 0 -4px 24px #233b2410;
+  }
+  .app-navigation button {
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+    padding: 7px 8px;
+    font-size: 11px;
+    min-height: 54px;
+  }
+  .app-navigation button[aria-current] {
+    background: #eaf0e1;
+    color: #215940;
+    box-shadow: none;
+  }
+  .app-navigation button svg {
+    font-size: 24px;
+  }
+  .app-footer {
+    padding-bottom: calc(104px + env(safe-area-inset-bottom));
+  }
+  .step-actions {
+    bottom: calc(79px + env(safe-area-inset-bottom));
+  }
+  .intro {
+    padding-right: 110px;
+  }
+  .intro h1 {
+    font-size: 30px;
+  }
+  .intro > p {
+    font-size: 13px;
+  }
+  .workshop-decoration {
+    width: 130px;
+    right: -12px;
+    bottom: 6px;
+  }
+  .intro .eyebrow {
+    max-width: 220px;
+    line-height: 1.6;
+  }
+  .gift-intro {
+    text-align: left;
+  }
+  .gift-intro p {
+    font-size: 14px;
+  }
+  .category-filters {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .category-filters button {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+  .gift-note {
+    text-align: left;
+    line-height: 1.6;
+  }
+  .gift-grid {
+    gap: 12px;
+  }
+  .gift-art {
+    height: 125px;
+  }
+  .gift-art > span {
+    font-size: 52px;
+  }
+  .gift-art i {
+    right: 14px;
+    top: 16px;
+    font-size: 18px;
+  }
+  .gift-art i:last-child {
+    left: 14px;
+    bottom: 16px;
+  }
+  .gift-copy {
+    padding: 14px;
+  }
+  .gift-copy h2 {
+    font-size: 16px;
+  }
+  .gift-copy p {
+    font-size: 12px;
+  }
+  .elf-tip {
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gift-art > span {
+    transition: none;
+  }
+}
+
+/* Legal information uses the same visual language as the application. */
+.legal-links nav,
+.legal-notice nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+.legal-links a,
+.legal-notice a,
+.legal-page a {
+  color: #1f5a43;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.app-footer .legal-links nav {
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.legal-notice {
+  margin-bottom: 20px;
+  color: #47594e;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+.legal-notice > summary {
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+.legal-notice > summary:hover {
+  color: #1f5a43;
+}
+.legal-notice-content {
+  padding: 12px 16px;
+  border-left: 2px solid #d5dfd5;
+}
+.legal-notice p {
+  margin: 0 0 10px;
+}
+.legal-page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+.legal-page h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+.legal-page h2 {
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin-top: 36px;
+}
+.legal-page .eyebrow {
+  margin-top: 32px;
+}
+.legal-page section {
+  scroll-margin-top: 24px;
+}
+.legal-draft {
+  background: #fff0cf;
+  border-left: 4px solid #a66b00;
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.legal-index {
+  border-bottom: 1px solid #d5dfd5;
+  padding: 16px 0;
+}
+@media print {
+  .legal-page {
+    max-width: none;
+    padding: 0;
+  }
+  .legal-page section {
+    break-inside: avoid;
+  }
+}

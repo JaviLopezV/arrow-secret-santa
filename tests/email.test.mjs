@@ -89,93 +89,164 @@ test("email validation rejects multiple addresses and header injection", () => {
   assert.equal(validEmail("ana+gift@example.com"), true);
 });
 
-import { sendDraw } from '../src/server/send-draw.ts';
-import { gmailConfig } from '../src/server/gmail.ts';
-const copy = JSON.parse(await readFile(new URL('../src/i18n/es.json', import.meta.url), 'utf8')).email;
+import { sendDraw } from "../src/server/send-draw.ts";
+import { gmailConfig } from "../src/server/gmail.ts";
+const copy = JSON.parse(
+  await readFile(new URL("../src/i18n/es.json", import.meta.url), "utf8"),
+).email;
 function harness() {
   const records = new Map();
   const calls = [];
   const redis = {
-    async get(key) { return structuredClone(records.get(key) ?? null); },
-    async set(key, value, options) { if (!options?.nx || !records.has(key)) records.set(key, structuredClone(value)); },
+    async get(key) {
+      return structuredClone(records.get(key) ?? null);
+    },
+    async set(key, value, options) {
+      if (!options?.nx || !records.has(key))
+        records.set(key, structuredClone(value));
+    },
     async eval(script, keys) {
-      if (script.includes('INCRBY')) return 1;
+      if (script.includes("INCRBY")) return 1;
       const state = records.get(keys[0]);
-      if (state === 'sent') return 2;
-      if (state && state !== 'failed') return 0;
-      records.set(keys[0], 'sending'); return 1;
+      if (state === "sent") return 2;
+      if (state && state !== "failed") return 0;
+      records.set(keys[0], "sending");
+      return 1;
     },
   };
-  const deps = { redis, from: 'test@gmail.com', copy, dailyLimit: 100,
-    async send(email, messageId) { calls.push({ email, messageId }); return 'accepted'; } };
+  const deps = {
+    redis,
+    from: "test@gmail.com",
+    copy,
+    dailyLimit: 100,
+    async send(email, messageId) {
+      calls.push({ email, messageId });
+      return "accepted";
+    },
+  };
   return { records, calls, deps };
 }
-test('successful Gmail draw sends privately, removes payload and never sends again', async () => {
+test("successful Gmail draw sends privately, removes payload and never sends again", async () => {
   const { records, calls, deps } = harness();
   const input = parseDrawRequest(request());
-  assert.deepEqual(await sendDraw(input, deps), { body: { status: 'sent' }, status: 200 });
+  assert.deepEqual(await sendDraw(input, deps), {
+    body: { status: "sent" },
+    status: 200,
+  });
   assert.equal(calls.length, 3);
-  assert.equal(new Set(calls.map(e => e.email.to)).size, 3);
+  assert.equal(new Set(calls.map((e) => e.email.to)).size, 3);
   assert.equal(records.get(`santa:draw:${input.id}`).emails, undefined);
-  await sendDraw(input, deps); assert.equal(calls.length, 3);
+  await sendDraw(input, deps);
+  assert.equal(calls.length, 3);
 });
-test('explicit failure retries only unconfirmed recipients with identical result', async () => {
+test("explicit failure retries only unconfirmed recipients with identical result", async () => {
   const { calls, deps } = harness();
   const input = parseDrawRequest(request());
-  deps.send = async (email, messageId) => { calls.push({ email, messageId }); return calls.length === 2 ? 'rejected' : 'accepted'; };
+  deps.send = async (email, messageId) => {
+    calls.push({ email, messageId });
+    return calls.length === 2 ? "rejected" : "accepted";
+  };
   assert.equal((await sendDraw(input, deps)).status, 502);
   assert.equal((await sendDraw(input, deps)).status, 200);
   assert.equal(calls.length, 4);
   assert.deepEqual(calls[1], calls[2]);
   assert.notEqual(calls[0].email.to, calls[2].email.to);
 });
-test('unknown SMTP acceptance blocks automatic resending even after retries', async () => {
+test("unknown SMTP acceptance blocks automatic resending even after retries", async () => {
   const { calls, deps } = harness();
-  deps.send = async (email) => { calls.push(email); throw new Error('lost after DATA'); };
+  deps.send = async (email) => {
+    calls.push(email);
+    throw new Error("lost after DATA");
+  };
   const input = parseDrawRequest(request());
-  assert.equal((await sendDraw(input, deps)).body.error, 'uncertain');
-  assert.equal((await sendDraw(input, deps)).body.error, 'uncertain');
+  assert.equal((await sendDraw(input, deps)).body.error, "uncertain");
+  assert.equal((await sendDraw(input, deps)).body.error, "uncertain");
   assert.equal(calls.length, 1);
 });
-test('concurrent attempts never send the same recipient twice', async () => {
+test("concurrent attempts never send the same recipient twice", async () => {
   const { calls, deps } = harness();
   const input = parseDrawRequest(request());
   await Promise.all([sendDraw(input, deps), sendDraw(input, deps)]);
   await sendDraw(input, deps);
   assert.equal(calls.length, 3);
-  assert.equal(new Set(calls.map(c => c.messageId)).size, 3);
+  assert.equal(new Set(calls.map((c) => c.messageId)).size, 3);
 });
-test('Redis failure after SMTP acceptance does not cause a duplicate', async () => {
+test("Redis failure after SMTP acceptance does not cause a duplicate", async () => {
   const { calls, deps } = harness();
   const original = deps.redis.set;
-  deps.redis.set = async (key, value, options) => { if (value === 'sent') throw new Error('offline'); return original(key,value,options); };
+  deps.redis.set = async (key, value, options) => {
+    if (value === "sent") throw new Error("offline");
+    return original(key, value, options);
+  };
   const input = parseDrawRequest(request());
   assert.equal((await sendDraw(input, deps)).status, 503);
   deps.redis.set = original;
-  assert.equal((await sendDraw(input, deps)).body.error, 'uncertain');
+  assert.equal((await sendDraw(input, deps)).body.error, "uncertain");
   assert.equal(calls.length, 1);
 });
-test('legacy pending Resend operations and changed payloads cannot send', async () => {
+test("legacy pending Resend operations and changed payloads cannot send", async () => {
   const { records, calls, deps } = harness();
   const input = parseDrawRequest(request());
-  deps.send = async () => 'rejected';
+  deps.send = async () => "rejected";
   await sendDraw(input, deps);
   delete records.get(`santa:draw:${input.id}`).provider;
-  assert.equal((await sendDraw(input, deps)).body.error, 'uncertain');
-  assert.equal((await sendDraw({ ...input, locale: 'en' }, deps)).status, 409);
+  assert.equal((await sendDraw(input, deps)).body.error, "uncertain");
+  assert.equal((await sendDraw({ ...input, locale: "en" }, deps)).status, 409);
   assert.equal(calls.length, 0);
 });
-test('quota and impossible exclusions stop sending', async () => {
+test("quota and impossible exclusions stop sending", async () => {
   const { calls, deps } = harness();
   deps.redis.eval = async () => 0;
   const input = parseDrawRequest(request());
   assert.equal((await sendDraw(input, deps)).status, 429);
-  input.game.exclusions = [['0', '1'], ['0', '2']];
-  assert.equal((await sendDraw(input, deps)).body.error, 'impossible');
+  input.game.exclusions = [
+    ["0", "1"],
+    ["0", "2"],
+  ];
+  assert.equal((await sendDraw(input, deps)).body.error, "impossible");
   assert.equal(calls.length, 0);
 });
-test('Gmail configuration requires an app password and strips Google display spaces', () => {
+test("Gmail configuration requires an app password and strips Google display spaces", () => {
   assert.equal(gmailConfig({}), null);
-  assert.equal(gmailConfig({ GMAIL_USER: 'user@gmail.com', GMAIL_APP_PASSWORD: 'short' }), null);
-  assert.deepEqual(gmailConfig({ GMAIL_USER: ' user@gmail.com ', GMAIL_APP_PASSWORD: 'abcd efgh ijkl mnop' }), { user: 'user@gmail.com', pass: 'abcdefghijklmnop' });
+  assert.equal(
+    gmailConfig({ GMAIL_USER: "user@gmail.com", GMAIL_APP_PASSWORD: "short" }),
+    null,
+  );
+  assert.deepEqual(
+    gmailConfig({
+      GMAIL_USER: " user@gmail.com ",
+      GMAIL_APP_PASSWORD: "abcd efgh ijkl mnop",
+    }),
+    { user: "user@gmail.com", pass: "abcdefghijklmnop" },
+  );
+});
+
+test("participant privacy information is present in HTML and text with a localized absolute link", async (t) => {
+  const previous = process.env.NEXT_PUBLIC_SITE_URL;
+  process.env.NEXT_PUBLIC_SITE_URL = "https://santa.example.com";
+  t.after(() => {
+    if (previous === undefined) delete process.env.NEXT_PUBLIC_SITE_URL;
+    else process.env.NEXT_PUBLIC_SITE_URL = previous;
+  });
+  for (const locale of ["es", "ca", "en"]) {
+    const m = JSON.parse(
+      await readFile(
+        new URL(`../src/i18n/${locale}.json`, import.meta.url),
+        "utf8",
+      ),
+    );
+    const email = emailTemplate(
+      game,
+      game.participants[0],
+      game.participants[1],
+      locale,
+      m.email,
+    );
+    const url = `https://santa.example.com/${locale}/legal/privacidad`;
+    assert.ok(email.text.includes(url));
+    assert.ok(email.html.includes(`href="${url}"`));
+    assert.ok(email.text.includes("AEPD"));
+    assert.ok(email.html.includes("AEPD"));
+    assert.ok(!email.text.includes(game.participants[2].email));
+  }
 });

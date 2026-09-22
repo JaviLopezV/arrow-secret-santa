@@ -20,7 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           MuiCssBaseline: {
             styleOverrides: {
               body: {
-                background: "#f3f5f2",
+                background: "#faf7ef",
                 color: "#173c2d",
               },
               "*:focus-visible": {

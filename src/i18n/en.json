@@ -165,5 +165,56 @@
     "privateText": "Everyone discovers only who they’re giving to.",
     "step": "Step",
     "of": "of"
+  },
+  "festive": {
+    "draw": "Draw",
+    "gifts": "Gift ideas",
+    "eyebrow": "A little magic, among friends",
+    "title": "The surprise workshop",
+    "description": "The best gifts say: “this reminded me of you”. Find a little inspiration for your favourite people.",
+    "all": "All",
+    "food": "Food lovers",
+    "home": "At home",
+    "creative": "Creative souls",
+    "experiences": "Time together",
+    "tipTitle": "An elf’s finishing touch",
+    "tip": "Add a note with a memory you share. Sometimes, that’s the best gift of all.",
+    "note": "Inspiration to adapt to your group’s budget.",
+    "elfNote": "Your elf crew is ready.",
+    "items": [
+      {
+        "title": "Hot chocolate kit",
+        "description": "Cocoa, marshmallows and a mug for cosy afternoons."
+      },
+      {
+        "title": "Their kind of breakfast",
+        "description": "Pack a little box with their favourite flavours."
+      },
+      {
+        "title": "A corner of calm",
+        "description": "A candle and a playlist made by you."
+      },
+      {
+        "title": "Socks with personality",
+        "description": "A pattern only your friend group would understand."
+      },
+      {
+        "title": "A notebook for bright ideas",
+        "description": "Blank pages and colourful pens to start something lovely."
+      },
+      {
+        "title": "An album of your story",
+        "description": "Photos, anecdotes and a little shared embarrassment."
+      },
+      {
+        "title": "An afternoon together voucher",
+        "description": "A walk, a snack and phones tucked away."
+      },
+      {
+        "title": "Game night",
+        "description": "A card game and their favourite snacks."
+      }
+    ],
+    "navigation": "Main navigation"
   }
 }

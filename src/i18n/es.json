@@ -165,5 +165,56 @@
     "privateText": "Cada persona descubre solo a quién le toca regalar.",
     "step": "Paso",
     "of": "de"
+  },
+  "festive": {
+    "draw": "Sorteo",
+    "gifts": "Ideas de regalo",
+    "eyebrow": "Un poco de magia, entre amigos",
+    "title": "El taller de las sorpresas",
+    "description": "Los mejores regalos dicen: «me acordé de ti». Encuentra una idea para esa persona tan tuya.",
+    "all": "Todas",
+    "food": "Para saborear",
+    "home": "En casa",
+    "creative": "Con imaginación",
+    "experiences": "Planes juntos",
+    "tipTitle": "El toque del duende",
+    "tip": "Añade una nota con un recuerdo vuestro. A veces, ese es el mejor regalo.",
+    "note": "Inspiración para adaptar a vuestro presupuesto.",
+    "elfNote": "Tu equipo de duendes ya está listo.",
+    "items": [
+      {
+        "title": "Kit de chocolate caliente",
+        "description": "Cacao, nubes y una taza para sus tardes de sofá."
+      },
+      {
+        "title": "Un desayuno a su medida",
+        "description": "Prepara una cajita con sus sabores favoritos."
+      },
+      {
+        "title": "Un rincón de calma",
+        "description": "Una vela y una playlist hecha por ti."
+      },
+      {
+        "title": "Calcetines con personalidad",
+        "description": "Un estampado que solo vuestro grupo entendería."
+      },
+      {
+        "title": "Un cuaderno de ideas",
+        "description": "Páginas en blanco y rotuladores para empezar algo bonito."
+      },
+      {
+        "title": "Un álbum de vuestra historia",
+        "description": "Fotos, anécdotas y algún momento de vergüenza compartida."
+      },
+      {
+        "title": "Vale por una tarde juntos",
+        "description": "Un paseo, una merienda y los móviles guardados."
+      },
+      {
+        "title": "Noche de juegos",
+        "description": "Un juego de cartas y su aperitivo favorito."
+      }
+    ],
+    "navigation": "Navegación principal"
   }
 }
