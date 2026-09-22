@@ -143,5 +143,27 @@
         "answer": "Sí. Pots organitzar un amic invisible per Nadal o qualsevol celebració amb grups de 3 a 30 persones. Acordeu un pressupost per regal i una data d’intercanvi abans del sorteig."
       }
     ]
+  },
+  "ui": {
+    "title": "Organitza el vostre amic invisible",
+    "subtitle": "Tu reuneixes el grup. Nosaltres guardem el secret.",
+    "steps": ["Grup", "Detalls", "Enviar"],
+    "next": "Continuar",
+    "back": "Enrere",
+    "peopleTitle": "Qui s’hi apunta?",
+    "peopleDescription": "Afegeix el nom i el correu de cada persona. Inclou-te si també hi participes.",
+    "detailsTitle": "Doneu-hi el vostre toc",
+    "detailsDescription": "Personalitza la trobada i tria qui no pot regalar a qui.",
+    "reviewTitle": "Tot a punt per a la sorpresa",
+    "reviewDescription": "Revisa el grup abans del sorteig. Cadascú rebrà el resultat per correu.",
+    "edit": "Editar",
+    "optional": "Pots deixar aquestes dades en blanc.",
+    "noDetails": "Sense especificar",
+    "reviewNote": "En continuar es farà el sorteig i s’enviaran els correus al grup.",
+    "help": "Necessites ajuda?",
+    "private": "Un correu. Un secret.",
+    "privateText": "Cada persona descobreix només a qui li toca regalar.",
+    "step": "Pas",
+    "of": "de"
   }
 }

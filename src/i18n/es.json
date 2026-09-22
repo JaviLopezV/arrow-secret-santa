@@ -143,5 +143,27 @@
         "answer": "Sí. Puedes organizar un amigo invisible para Navidad o cualquier celebración con grupos de 3 a 30 personas. Acordad un presupuesto por regalo y una fecha de intercambio antes de sortear."
       }
     ]
+  },
+  "ui": {
+    "title": "Organiza vuestro amigo invisible",
+    "subtitle": "Tú reúnes al grupo. Nosotros guardamos el secreto.",
+    "steps": ["Grupo", "Detalles", "Enviar"],
+    "next": "Continuar",
+    "back": "Atrás",
+    "peopleTitle": "¿Quién se apunta?",
+    "peopleDescription": "Añade el nombre y email de cada persona. Inclúyete si también participas.",
+    "detailsTitle": "Dadle vuestro toque",
+    "detailsDescription": "Personaliza el encuentro y elige quién no puede regalar a quién.",
+    "reviewTitle": "Todo listo para la sorpresa",
+    "reviewDescription": "Revisa el grupo antes de sortear. Cada persona recibirá su resultado por email.",
+    "edit": "Editar",
+    "optional": "Puedes dejar estos datos en blanco.",
+    "noDetails": "Sin especificar",
+    "reviewNote": "Al continuar se realizará el sorteo y se enviarán los emails al grupo.",
+    "help": "¿Necesitas ayuda?",
+    "private": "Un email. Un secreto.",
+    "privateText": "Cada persona descubre solo a quién le toca regalar.",
+    "step": "Paso",
+    "of": "de"
   }
 }

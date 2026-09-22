@@ -143,5 +143,27 @@
         "answer": "Yes. Organize a Christmas Secret Santa or another gift exchange for 3 to 30 people. Agree on a gift budget and exchange date before drawing names."
       }
     ]
+  },
+  "ui": {
+    "title": "Your Secret Santa starts here",
+    "subtitle": "You bring the people. We keep the secret.",
+    "steps": ["Group", "Details", "Send"],
+    "next": "Continue",
+    "back": "Back",
+    "peopleTitle": "Who’s joining?",
+    "peopleDescription": "Add everyone’s name and email. Include yourself if you’re taking part.",
+    "detailsTitle": "Make it yours",
+    "detailsDescription": "Plan the exchange and choose who cannot give to whom.",
+    "reviewTitle": "Ready for the surprise",
+    "reviewDescription": "Check your group before drawing. Everyone will receive their result by email.",
+    "edit": "Edit",
+    "optional": "You can leave these details blank.",
+    "noDetails": "Not specified",
+    "reviewNote": "Continuing will draw the names and send the emails to your group.",
+    "help": "Need a hand?",
+    "private": "One email. One secret.",
+    "privateText": "Everyone discovers only who they’re giving to.",
+    "step": "Step",
+    "of": "of"
   }
 }

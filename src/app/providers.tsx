@@ -8,7 +8,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       defaultMode="light"
       themeOptions={{
         colorScheme: "light",
-        brand: { primary: { main: "#1f5a43" }, secondary: { main: "#b4232f" } },
+        brand: { primary: { main: "#1f5a43" }, secondary: { main: "#a3432c" } },
         typography: {
           fontFamily: '"Avenir Next", Avenir, "Segoe UI", sans-serif',
           h1: { fontWeight: 800, letterSpacing: "-0.065em", lineHeight: 1.06 },
@@ -20,8 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           MuiCssBaseline: {
             styleOverrides: {
               body: {
-                background:
-                  "radial-gradient(circle at 8% 0%, #fff8e8 0%, #f7efdf 42%, #e7f0e8 100%)",
+                background: "#f3f5f2",
                 color: "#173c2d",
               },
               "*:focus-visible": {
@@ -39,8 +38,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
           },
           MuiOutlinedInput: {
             styleOverrides: {
-              root: { borderRadius: 12, backgroundColor: "#fffdf7" },
+              root: { borderRadius: 12, backgroundColor: "#fff", fontSize: 16 },
             },
+          },
+          MuiIconButton: {
+            styleOverrides: { root: { minWidth: 44, minHeight: 44 } },
           },
           MuiPaper: { styleOverrides: { root: { backgroundImage: "none" } } },
         },

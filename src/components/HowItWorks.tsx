@@ -9,13 +9,12 @@ export function HowItWorks({ m }: { m: Messages }) {
   return (
     <Box
       component="section"
-      id="how"
-      sx={{ pt: 8, pb: 7, borderTop: "1px solid #e4d7c9", scrollMarginTop: 24 }}
+      sx={{ pt: 2, pb: 3, borderTop: "1px solid #e4d7c9", scrollMarginTop: 24 }}
     >
       <Typography
         component="h2"
         variant="h2"
-        sx={{ fontSize: { xs: 28, sm: 34 }, textAlign: "center" }}
+        sx={{ fontSize: { xs: 22, sm: 24 }, textAlign: "center" }}
       >
         {m.how.title}
       </Typography>
@@ -25,9 +24,9 @@ export function HowItWorks({ m }: { m: Messages }) {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+          gridTemplateColumns: { xs: "1fr", md: "1fr" },
           gap: 4,
-          mt: 5,
+          mt: 3,
         }}
       >
         {m.how.steps.map((step, index) => {

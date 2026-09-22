@@ -15,7 +15,10 @@ import type { Locale, Messages } from "@/i18n/messages";
 export function Header({ locale, m }: { locale: Locale; m: Messages }) {
   const router = useRouter();
   return (
-    <Box component="header" sx={{ borderBottom: "1px solid #e4d7c9" }}>
+    <Box
+      component="header"
+      sx={{ borderBottom: "1px solid #e0e5e1", bgcolor: "#fff" }}
+    >
       <Link className="skip-link" href="#main">
         {m.nav.skip}
       </Link>
@@ -24,7 +27,7 @@ export function Header({ locale, m }: { locale: Locale; m: Messages }) {
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          sx={{ minHeight: 88, gap: 2 }}
+          sx={{ minHeight: 72, gap: 2 }}
         >
           <Stack direction="row" spacing={1} alignItems="center">
             <Box
@@ -58,9 +61,13 @@ export function Header({ locale, m }: { locale: Locale; m: Messages }) {
               </Typography>
             </Box>
           </Stack>
-          <Stack direction="row" spacing={3} alignItems="center">
+          <Stack direction="row" spacing={2} alignItems="center">
             <Link
               href="#how"
+              onClick={() => {
+                const help = document.getElementById("how");
+                if (help instanceof HTMLDetailsElement) help.open = true;
+              }}
               underline="hover"
               sx={{
                 display: { xs: "none", sm: "inline" },

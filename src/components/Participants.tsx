@@ -66,8 +66,15 @@ export function Participants({
           label={m.form.name}
           placeholder={m.form.namePlaceholder}
           value={name}
-          error={!!fieldError}
-          helperText={fieldError || undefined}
+          error={
+            !!fieldError &&
+            !["invalidEmail", "duplicateEmail"].includes(c.error)
+          }
+          helperText={
+            !["invalidEmail", "duplicateEmail"].includes(c.error)
+              ? fieldError || undefined
+              : undefined
+          }
           slotProps={{ htmlInput: { maxLength: 40 } }}
           onChange={(e) => setName(e.target.value)}
           onKeyDown={(e) => {
@@ -79,9 +86,16 @@ export function Participants({
         />
         <TextField
           label={m.form.email}
+          error={["invalidEmail", "duplicateEmail"].includes(c.error)}
+          helperText={
+            ["invalidEmail", "duplicateEmail"].includes(c.error)
+              ? fieldError
+              : undefined
+          }
           type="email"
           value={email}
-          autoComplete="email"
+          autoComplete="off"
+          autoCapitalize="none"
           slotProps={{ htmlInput: { maxLength: 254 } }}
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={(e) => {
@@ -106,12 +120,12 @@ export function Participants({
             textAlign: "center",
             py: 2.5,
             px: 3,
-            border: "1px dashed #d9cdbd",
+            border: "1px dashed #cfdbce",
             borderRadius: 3,
-            bgcolor: "#fffaf1",
+            bgcolor: "#f5f7f2",
           }}
         >
-          <PeopleOutlineRounded sx={{ color: "#b4232f", mb: 0.5 }} />
+          <PeopleOutlineRounded sx={{ color: "#1f5a43", mb: 0.5 }} />
           <Typography sx={{ fontSize: 13, color: "#65756a" }}>
             {m.form.empty}
           </Typography>
@@ -124,8 +138,6 @@ export function Participants({
             p: 0,
             display: "grid",
             gap: 0.75,
-            maxHeight: 260,
-            overflowY: "auto",
           }}
         >
           {c.game.participants.map((person, index) => (
@@ -135,14 +147,20 @@ export function Participants({
               direction="row"
               alignItems="center"
               spacing={1}
-              sx={{ bgcolor: "#fffaf1", borderRadius: 2, pl: 1.5, pr: 0.5 }}
+              sx={{
+                bgcolor: "#f5f7f2",
+                borderRadius: 2,
+                pl: 1.5,
+                pr: 0.5,
+                py: 0.75,
+              }}
             >
               <Avatar
                 sx={{
                   width: 30,
                   height: 30,
                   fontSize: 12,
-                  bgcolor: index % 2 ? "#e8f1e9" : "#fbe5df",
+                  bgcolor: index % 2 ? "#e8f1e9" : "#eaf0dc",
                   color: "primary.main",
                 }}
               >
