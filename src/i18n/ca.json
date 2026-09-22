@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Arrow Secret Santa · Amic invisible",
-    "description": "Cada participant rep el resultat per email en l’idioma seleccionat al web.",
+    "title": "Amic invisible online sense registre | Arrow Secret Santa",
+    "description": "Organitza el teu amic invisible online amb Arrow Secret Santa: sorteig de 3 a 30 persones, exclusions entre parelles i resultats privats per email. Sense registre.",
     "imageAlt": "Arrow Secret Santa: un regal coral sobre un fons crema i blau nit."
   },
   "nav": {
@@ -12,9 +12,9 @@
   },
   "hero": {
     "eyebrow": "MÉS IL·LUSIÓ, MENYS COMPLICACIONS",
-    "title": "El secret és",
-    "accent": "compartir.",
-    "description": "Reuneix les teves persones preferides. Nosaltres hi posem l’atzar; vosaltres, la màgia del regal.",
+    "title": "El teu amic invisible,",
+    "accent": "sense complicacions.",
+    "description": "Organitza el sorteig de l’amic invisible online amb Arrow Secret Santa. Afegeix el teu grup, tria les exclusions i envia cada resultat en privat per email, sense registrar-te.",
     "badge": "Sense registres · Per email · En privat",
     "art": "Un regal embolicat amb afecte",
     "note": "Per a aquell grup que sempre té alguna cosa per celebrar.",
@@ -88,7 +88,7 @@
     "defaultEvent": "El nostre amic invisible"
   },
   "how": {
-    "title": "Tres passos. Molts somriures.",
+    "title": "Com organitzar un amic invisible online",
     "subtitle": "El pla més senzill per sorprendre els teus.",
     "steps": [
       {
@@ -117,5 +117,31 @@
     "budget": "Pressupost",
     "date": "Dia de l’intercanvi",
     "event": "El nostre amic invisible"
+  },
+  "faq": {
+    "title": "Preguntes freqüents sobre l’amic invisible",
+    "description": "Arrow Secret Santa t’ajuda a organitzar un intercanvi de regals amb amics, família o companys de feina. En castellà també es coneix com a Arrow Amigo Invisible.",
+    "items": [
+      {
+        "question": "Què és l’amic invisible o Secret Santa?",
+        "answer": "L’amic invisible, també anomenat Secret Santa, és un intercanvi de regals en què cada persona regala a una altra del grup escollida per sorteig. Podeu acordar un pressupost i una data per mantenir la sorpresa fins a l’intercanvi."
+      },
+      {
+        "question": "Com es fa el sorteig de l’amic invisible per email?",
+        "answer": "Afegeix el nom i l’email d’entre 3 i 30 participants. Pots indicar el pressupost, la data i les exclusions. En fer el sorteig, Arrow Secret Santa envia a cada persona un email amb el nom de qui li ha tocat."
+      },
+      {
+        "question": "Es poden excloure parelles del sorteig?",
+        "answer": "Sí. Les exclusions funcionen en tots dos sentits: les dues persones seleccionades no es podran regalar entre elles. Ningú no s’assigna a si mateix. Si les exclusions impedeixen completar el sorteig, n’hauràs de treure alguna."
+      },
+      {
+        "question": "Cal registrar-se o reunir-se en persona?",
+        "answer": "No cal crear un compte ni reunir el grup per fer el sorteig. Només necessites els noms i emails dels participants; cadascú rep el resultat per correu."
+      },
+      {
+        "question": "Serveix per a amics, famílies i companys de feina?",
+        "answer": "Sí. Pots organitzar un amic invisible per Nadal o qualsevol celebració amb grups de 3 a 30 persones. Acordeu un pressupost per regal i una data d’intercanvi abans del sorteig."
+      }
+    ]
   }
 }

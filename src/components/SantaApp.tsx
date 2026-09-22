@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Alert, Box, Container, Stack, Typography } from "@jlopvil/mui-kit";
 import type { Locale, Messages } from "@/i18n/messages";
 import { useGame } from "@/game/useGame";
@@ -9,7 +10,15 @@ import { Setup } from "./Setup";
 import { Results } from "./Results";
 import { HowItWorks } from "./HowItWorks";
 
-export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
+export function SantaApp({
+  locale,
+  m,
+  children,
+}: {
+  locale: Locale;
+  m: Messages;
+  children?: React.ReactNode;
+}) {
   const controller = useGame(locale);
   return (
     <>
@@ -43,6 +52,7 @@ export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
           </Box>
         </Box>
         <HowItWorks m={m} />
+        {children}
       </Container>
       <Box component="footer" sx={{ borderTop: "1px solid #e4d7c9", py: 3 }}>
         <Container maxWidth="lg">
@@ -58,6 +68,32 @@ export function SantaApp({ locale, m }: { locale: Locale; m: Messages }) {
               {m.footer.privacy}
             </Typography>
           </Stack>
+          <nav className="locale-links" aria-label={m.nav.language}>
+            <Link
+              href="/es"
+              hrefLang="es"
+              lang="es"
+              aria-current={locale === "es" ? "page" : undefined}
+            >
+              Español
+            </Link>
+            <Link
+              href="/ca"
+              hrefLang="ca"
+              lang="ca"
+              aria-current={locale === "ca" ? "page" : undefined}
+            >
+              Català
+            </Link>
+            <Link
+              href="/en"
+              hrefLang="en"
+              lang="en"
+              aria-current={locale === "en" ? "page" : undefined}
+            >
+              English
+            </Link>
+          </nav>
         </Container>
       </Box>
     </>

@@ -5,9 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return locales.map((locale) => ({
     url: new URL(`/${locale}`, siteUrl).href,
     alternates: {
-      languages: Object.fromEntries(
-        locales.map((l) => [l, new URL(`/${l}`, siteUrl).href]),
-      ),
+      languages: {
+        ...Object.fromEntries(
+          locales.map((l) => [l, new URL(`/${l}`, siteUrl).href]),
+        ),
+        "x-default": new URL("/es", siteUrl).href,
+      },
     },
   }));
 }

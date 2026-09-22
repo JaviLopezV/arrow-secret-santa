@@ -66,3 +66,23 @@ Para una recuperación manual, el administrador debe detener solicitudes activas
 Los pendientes caducan para envío a los 7 días. Tras éxito, se elimina el contenido privado del lote y se conservan la huella y los estados de envío. Los pendientes contienen datos personales y deben revisarse periódicamente: redactar su campo `emails` al caducar, conservando la fecha y el bloqueo. No borrar las claves de operaciones que un cliente pueda reintentar. Gmail conserva los correos en la cuenta remitente.
 
 La API exige origen propio y JSON, limita el cuerpo a 32 KiB y aplica una cuota diaria compartida (100 destinatarios nuevos por defecto). Es una protección básica para una web sin cuentas; antes de abrirla a tráfico público elevado añade autenticación o CAPTCHA y límites por usuario. Redis es obligatorio y debe tener Eviction desactivado. El límite diario no sustituye los límites propios de Gmail.
+
+## SEO y publicación en Google
+
+Las páginas `/es`, `/ca` y `/en` incluyen títulos y descripciones propios, un H1 descriptivo, preguntas frecuentes renderizadas en el servidor, enlaces entre idiomas, canonical, hreflang (incluido `x-default`), Open Graph y datos estructurados `WebSite` y `WebApplication`. `/sitemap.xml` enumera las tres páginas y `/robots.txt` indica el sitemap.
+
+Para activar estos cambios en la web pública:
+
+1. Configura `NEXT_PUBLIC_SITE_URL` con el dominio público definitivo antes de compilar y desplegar. Debe ser el mismo dominio que quieres indexar, sin rutas de idioma. En Vercel, si se omite, se utiliza `VERCEL_PROJECT_PRODUCTION_URL`. Evita publicar canonical con localhost o con un dominio de preview.
+2. Añade ese dominio a [Google Search Console](https://search.google.com/search-console). Puedes verificar una propiedad de dominio mediante DNS o una propiedad de prefijo de URL mediante etiqueta HTML: en ese caso guarda solo el valor de `content` en `GOOGLE_SITE_VERIFICATION` y vuelve a desplegar.
+3. Envía `https://TU-DOMINIO/sitemap.xml` en el apartado Sitemaps e inspecciona `/es`, `/en` y `/ca` para solicitar su indexación. Comprueba que son accesibles sin contraseña y que el hosting no añade `X-Robots-Tag: noindex` en producción.
+4. Revisa consultas, impresiones e indexación en Search Console. El SEO facilita el descubrimiento y la comprensión del contenido, pero no garantiza posiciones ni indexación. Los enlaces desde otras webs relevantes también ayudan a descubrir el sitio.
+
+Verificación del HTML generado (usa el mismo `NEXT_PUBLIC_SITE_URL` al compilar y verificar):
+
+```sh
+npm run build
+npm run verify:metadata
+```
+
+La verificación comprueba las tres traducciones, H1, contenido visible, enlaces, datos estructurados, canonical, hreflang e imágenes sociales. No envía emails ni solicitudes de indexación.

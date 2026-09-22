@@ -22,7 +22,29 @@ for (const locale of locales) {
         attribute(tag, "property") === name || attribute(tag, "name") === name,
     );
   assert.ok(html.includes(`<html lang="${locale}"`));
-  assert.ok(html.includes("<title>Arrow Secret Santa"));
+  const messages = JSON.parse(
+    await readFile(
+      new URL(`../src/i18n/${locale}.json`, import.meta.url),
+      "utf8",
+    ),
+  );
+  assert.ok(html.includes(`<title>${messages.metadata.title}</title>`));
+  assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
+  assert.ok(html.includes(messages.hero.title));
+  assert.ok(html.includes(messages.faq.title));
+  for (const item of messages.faq.items) {
+    assert.ok(html.includes(item.question));
+    assert.ok(html.includes(item.answer));
+  }
+  for (const lang of locales) assert.ok(html.includes(`href="/${lang}"`));
+  const jsonLd = html.match(
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
+  );
+  assert.ok(jsonLd, "Structured data must be rendered on the server");
+  const graph = JSON.parse(jsonLd[1])["@graph"];
+  assert.equal(graph[0]["@type"], "WebSite");
+  assert.equal(graph[1].url, new URL(`/${locale}`, base).href);
+  assert.equal(graph[1].inLanguage, locale);
   assert.ok(attribute(meta("description"), "content").length > 40);
   assert.equal(
     attribute(

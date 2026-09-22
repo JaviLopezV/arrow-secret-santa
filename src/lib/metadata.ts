@@ -22,6 +22,7 @@ export function pageMetadata(locale: Locale): Metadata {
     title: m.title,
     description: m.description,
     applicationName: "Arrow Secret Santa",
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
     alternates: {
       canonical: `/${locale}`,
       languages: { es: "/es", ca: "/ca", en: "/en", "x-default": "/es" },
@@ -44,5 +45,35 @@ export function pageMetadata(locale: Locale): Metadata {
       description: m.description,
       images: [image],
     },
+  };
+}
+
+export function structuredData(locale: Locale) {
+  const url = new URL(`/${locale}`, siteUrl).href;
+  const websiteId = new URL("/#website", siteUrl).href;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: new URL("/", siteUrl).href,
+        name: "Arrow Secret Santa",
+        alternateName: ["Arrow Amigo Invisible", "Arrow Amic Invisible"],
+        inLanguage: [...locales],
+      },
+      {
+        "@type": "WebApplication",
+        "@id": `${url}#app`,
+        name: "Arrow Secret Santa",
+        alternateName: "Arrow Amigo Invisible",
+        url,
+        description: messages[locale].metadata.description,
+        inLanguage: locale,
+        applicationCategory: "LifestyleApplication",
+        operatingSystem: "Any",
+        isPartOf: { "@id": websiteId },
+      },
+    ],
   };
 }

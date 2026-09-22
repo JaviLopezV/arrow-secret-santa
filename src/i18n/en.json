@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Arrow Secret Santa · A little surprise",
-    "description": "Each participant receives their result by email in the language selected on the website.",
+    "title": "Secret Santa Generator Online | Arrow Secret Santa",
+    "description": "Organize your Secret Santa online with Arrow: draw names for 3–30 people, exclude pairs and send private results by email. No account needed.",
     "imageAlt": "Arrow Secret Santa: a coral gift on a cream and midnight blue background."
   },
   "nav": {
@@ -12,9 +12,9 @@
   },
   "hero": {
     "eyebrow": "MORE JOY, LESS PLANNING",
-    "title": "The secret is",
-    "accent": "sharing.",
-    "description": "Bring your favourite people together. We bring the luck; you bring the magic of giving.",
+    "title": "Your Secret Santa,",
+    "accent": "made simple.",
+    "description": "Organize your online Secret Santa draw with Arrow Secret Santa. Add your group, choose exclusions and send each person their private result by email, with no registration.",
     "badge": "No sign-ups · By email · In private",
     "art": "A gift wrapped with love",
     "note": "For the group that always has something to celebrate.",
@@ -88,7 +88,7 @@
     "defaultEvent": "Our Secret Santa"
   },
   "how": {
-    "title": "Three steps. So many smiles.",
+    "title": "How to organize a Secret Santa online",
     "subtitle": "A simple little plan to make someone’s day.",
     "steps": [
       {
@@ -117,5 +117,31 @@
     "budget": "Gift budget",
     "date": "Exchange date",
     "event": "Our Secret Santa"
+  },
+  "faq": {
+    "title": "Frequently asked questions about Secret Santa",
+    "description": "Arrow Secret Santa helps friends, families and coworkers organize a gift exchange. It is also known as Arrow Amigo Invisible in Spanish.",
+    "items": [
+      {
+        "question": "What is Secret Santa?",
+        "answer": "Secret Santa is a gift exchange where each participant draws another person to give a gift to. Agree on a budget and exchange date, and keep your recipient a secret until the celebration."
+      },
+      {
+        "question": "How do I draw Secret Santa names by email?",
+        "answer": "Add the names and email addresses of 3 to 30 participants. You can set a budget, date and exclusions. When you run the draw, Arrow Secret Santa emails each participant the name of their recipient."
+      },
+      {
+        "question": "Can I exclude couples or other pairs?",
+        "answer": "Yes. Exclusions work in both directions, so the selected people cannot draw each other. Nobody draws their own name. If the exclusions make a draw impossible, remove a pair and try again."
+      },
+      {
+        "question": "Do I need an account or an in-person meeting?",
+        "answer": "No account or group meeting is needed to run the draw. You only need the participants’ names and email addresses; each person receives their result by email."
+      },
+      {
+        "question": "Can I use it for friends, family or coworkers?",
+        "answer": "Yes. Organize a Christmas Secret Santa or another gift exchange for 3 to 30 people. Agree on a gift budget and exchange date before drawing names."
+      }
+    ]
   }
 }

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Arrow Secret Santa · Amigo invisible",
-    "description": "Cada participante recibe su resultado por email en el idioma seleccionado en la web.",
+    "title": "Amigo invisible online sin registro | Arrow Secret Santa",
+    "description": "Organiza tu amigo invisible online con Arrow Secret Santa: sorteo de 3 a 30 personas, exclusiones entre parejas y resultados privados por email. Sin registro.",
     "imageAlt": "Arrow Secret Santa: un regalo coral sobre un fondo crema y azul noche."
   },
   "nav": {
@@ -12,9 +12,9 @@
   },
   "hero": {
     "eyebrow": "MÁS ILUSIÓN, MENOS COMPLICACIONES",
-    "title": "El secreto está en",
-    "accent": "compartir.",
-    "description": "Reúne a tus personas favoritas. Nosotros ponemos el azar; vosotros, la magia del regalo.",
+    "title": "Tu amigo invisible,",
+    "accent": "sin complicaciones.",
+    "description": "Organiza el sorteo de amigo invisible online con Arrow Secret Santa. Añade a tu grupo, elige las exclusiones y recibe cada resultado en privado por email, sin registrarte.",
     "badge": "Sin registros · Por email · En privado",
     "art": "Un regalo envuelto con cariño",
     "note": "Para ese grupo que siempre tiene algo que celebrar.",
@@ -88,7 +88,7 @@
     "defaultEvent": "Nuestro amigo invisible"
   },
   "how": {
-    "title": "Tres pasos. Muchas sonrisas.",
+    "title": "Cómo organizar un amigo invisible online",
     "subtitle": "El plan más sencillo para sorprender a los tuyos.",
     "steps": [
       {
@@ -117,5 +117,31 @@
     "budget": "Presupuesto",
     "date": "Día del intercambio",
     "event": "Nuestro amigo invisible"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes sobre el amigo invisible",
+    "description": "Arrow Amigo Invisible, también conocido como Arrow Secret Santa, te ayuda a organizar un intercambio de regalos con amigos, familia o compañeros de trabajo.",
+    "items": [
+      {
+        "question": "¿Qué es el amigo invisible o Secret Santa?",
+        "answer": "El amigo invisible, también llamado Secret Santa, es un intercambio de regalos en el que cada persona regala a otra del grupo elegida por sorteo. Podéis acordar un presupuesto y una fecha para mantener la sorpresa hasta el intercambio."
+      },
+      {
+        "question": "¿Cómo hacer el sorteo de amigo invisible por email?",
+        "answer": "Añade el nombre y email de entre 3 y 30 participantes. Puedes indicar el presupuesto, la fecha y las exclusiones. Al realizar el sorteo, Arrow Secret Santa envía a cada persona un email con el nombre de quien le ha tocado."
+      },
+      {
+        "question": "¿Se pueden excluir parejas del sorteo?",
+        "answer": "Sí. Las exclusiones funcionan en ambos sentidos: las dos personas seleccionadas no podrán regalarse entre sí. Nadie se asigna a sí mismo. Si las exclusiones impiden completar el sorteo, tendrás que quitar alguna."
+      },
+      {
+        "question": "¿Hace falta registrarse o reunirse en persona?",
+        "answer": "No necesitas crear una cuenta ni reunir al grupo para hacer el sorteo. Solo necesitas los nombres y emails de los participantes; cada uno recibe su resultado por correo."
+      },
+      {
+        "question": "¿Sirve para amigos, familias y compañeros de trabajo?",
+        "answer": "Sí. Puedes organizar un amigo invisible para Navidad o cualquier celebración con grupos de 3 a 30 personas. Acordad un presupuesto por regalo y una fecha de intercambio antes de sortear."
+      }
+    ]
   }
 }
