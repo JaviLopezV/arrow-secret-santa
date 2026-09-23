@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CasinoOutlined from "@mui/icons-material/CasinoOutlined";
 import CardGiftcardRounded from "@mui/icons-material/CardGiftcardRounded";
 import { ElfWorkshop } from "./ElfWorkshop";
@@ -26,7 +26,15 @@ export function SantaApp({
 }) {
   const controller = useGame(locale);
   const [page, setPage] = useState("draw");
+  useEffect(() => {
+    const syncPage = () =>
+      setPage(window.location.hash === "#gifts" ? "gifts" : "draw");
+    syncPage();
+    window.addEventListener("hashchange", syncPage);
+    return () => window.removeEventListener("hashchange", syncPage);
+  }, []);
   function navigate(next: string) {
+    window.location.hash = next;
     setPage(next);
     window.scrollTo({ top: 0, behavior: "instant" });
   }

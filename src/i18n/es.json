@@ -110,6 +110,7 @@
     "privacy": "Los nombres y emails se envían al servidor y al proveedor de correo para entregar cada resultado en privado."
   },
   "email": {
+    "gifts": "Ver ideas de regalo",
     "subject": "Tu amigo invisible",
     "hello": "Hola",
     "gives": "Te ha tocado regalar a…",
@@ -184,37 +185,177 @@
     "items": [
       {
         "title": "Kit de chocolate caliente",
-        "description": "Cacao, nubes y una taza para sus tardes de sofá."
+        "description": "Cacao, nubes y una taza para sus tardes de sofá.",
+        "group": "food",
+        "symbol": "☕"
       },
       {
         "title": "Un desayuno a su medida",
-        "description": "Prepara una cajita con sus sabores favoritos."
+        "description": "Prepara una cajita con sus sabores favoritos.",
+        "group": "food",
+        "symbol": "🥐"
       },
       {
         "title": "Un rincón de calma",
-        "description": "Una vela y una playlist hecha por ti."
+        "description": "Una vela y una playlist hecha por ti.",
+        "group": "home",
+        "symbol": "🕯️"
       },
       {
         "title": "Calcetines con personalidad",
-        "description": "Un estampado que solo vuestro grupo entendería."
+        "description": "Un estampado que solo vuestro grupo entendería.",
+        "group": "home",
+        "symbol": "🧦"
       },
       {
         "title": "Un cuaderno de ideas",
-        "description": "Páginas en blanco y rotuladores para empezar algo bonito."
+        "description": "Páginas en blanco y rotuladores para empezar algo bonito.",
+        "group": "creative",
+        "symbol": "🎨"
       },
       {
         "title": "Un álbum de vuestra historia",
-        "description": "Fotos, anécdotas y algún momento de vergüenza compartida."
+        "description": "Fotos, anécdotas y algún momento de vergüenza compartida.",
+        "group": "creative",
+        "symbol": "📸"
       },
       {
         "title": "Vale por una tarde juntos",
-        "description": "Un paseo, una merienda y los móviles guardados."
+        "description": "Un paseo, una merienda y los móviles guardados.",
+        "group": "experiences",
+        "symbol": "🎟️"
       },
       {
         "title": "Noche de juegos",
-        "description": "Un juego de cartas y su aperitivo favorito."
+        "description": "Un juego de cartas y su aperitivo favorito.",
+        "group": "experiences",
+        "symbol": "🎲"
+      },
+      {
+        "title": "Sesión de cine en una caja",
+        "description": "Palomitas, sus chuches favoritas y una película elegida para esa persona.",
+        "group": "food",
+        "symbol": "🍿"
+      },
+      {
+        "title": "Una planta con nombre propio",
+        "description": "Una planta pequeña con una maceta decorada y una tarjeta de presentación.",
+        "group": "home",
+        "symbol": "🌱"
+      },
+      {
+        "title": "Kit de bordado para empezar",
+        "description": "Un bastidor, hilos de colores y un diseño sencillo para su primer proyecto.",
+        "group": "creative",
+        "symbol": "🧵"
+      },
+      {
+        "title": "Ruta de lugares pendientes",
+        "description": "Diseña un paseo con tres paradas que siempre decís que vais a visitar.",
+        "group": "experiences",
+        "symbol": "🗺️"
+      },
+      {
+        "title": "Trofeo a su talento más peculiar",
+        "description": "Premia su habilidad para llegar tarde o elegir siempre el mejor postre.",
+        "group": "funny",
+        "symbol": "🏆"
+      },
+      {
+        "title": "Taza con su frase de siempre",
+        "description": "Convierte esa coletilla que repite en cada quedada en su taza oficial.",
+        "group": "funny",
+        "symbol": "☕"
+      },
+      {
+        "title": "Calendario de bromas internas",
+        "description": "Doce meses, doce recuerdos divertidos y fechas inventadas por vuestro grupo.",
+        "group": "funny",
+        "symbol": "📅"
+      },
+      {
+        "title": "Calcetines con la cara de su mascota",
+        "description": "Para llevar a su compañero favorito incluso a las reuniones más serias.",
+        "group": "funny",
+        "symbol": "🧦"
+      },
+      {
+        "title": "Una piedra de compañía",
+        "description": "Ponle nombre, prepara su caja y escribe un manual de cuidados exageradamente detallado.",
+        "group": "absurd",
+        "symbol": "🪨"
+      },
+      {
+        "title": "Un pepinillo de ganchillo",
+        "description": "Un pequeño personaje con ojos y un mensaje de ánimo totalmente desproporcionado.",
+        "group": "absurd",
+        "symbol": "🥒"
+      },
+      {
+        "title": "Un pato con cargo oficial",
+        "description": "Un patito de goma con acreditación de director de siestas o supervisor del sofá.",
+        "group": "absurd",
+        "symbol": "🦆"
+      },
+      {
+        "title": "Retrato solemne de un objeto cotidiano",
+        "description": "Enmarca una foto de su tostadora como si fuera una obra de museo.",
+        "group": "absurd",
+        "symbol": "🖼️"
+      },
+      {
+        "title": "Kit para domar los cables",
+        "description": "Sujetacables y etiquetas para que su mochila deje de ser un nido de enredos.",
+        "group": "practical",
+        "symbol": "🔌"
+      },
+      {
+        "title": "Luz para sus lecturas nocturnas",
+        "description": "Una pequeña lámpara de pinza y un marcapáginas con una dedicatoria.",
+        "group": "practical",
+        "symbol": "📖"
+      },
+      {
+        "title": "Bolsa plegable con un guiño",
+        "description": "Una bolsa reutilizable con un dibujo que encaje con sus aficiones.",
+        "group": "practical",
+        "symbol": "👜"
+      },
+      {
+        "title": "Un hogar para sus llaves",
+        "description": "Una bandejita para la entrada, con una nota: «esta vez están aquí».",
+        "group": "practical",
+        "symbol": "🗝️"
+      },
+      {
+        "title": "Sobres para abrir cuando…",
+        "description": "Escribe mensajes para un día difícil, una buena noticia o una tarde de aburrimiento.",
+        "group": "handmade",
+        "symbol": "✉️"
+      },
+      {
+        "title": "Recetario de vuestro grupo",
+        "description": "Reúne vuestras recetas favoritas con notas, dibujos y algún secreto de cocina.",
+        "group": "handmade",
+        "symbol": "📚"
+      },
+      {
+        "title": "La banda sonora de vuestra amistad",
+        "description": "Crea una playlist y acompáñala con una tarjeta que explique cada canción.",
+        "group": "handmade",
+        "symbol": "🎵"
+      },
+      {
+        "title": "Talonario de pequeños favores",
+        "description": "Vales hechos a mano para un desayuno, cuidar sus plantas o cocinar juntos.",
+        "group": "handmade",
+        "symbol": "🎟️"
       }
     ],
-    "navigation": "Navegación principal"
+    "navigation": "Navegación principal",
+    "funny": "Regalos graciosos",
+    "absurd": "Regalos absurdos",
+    "practical": "Regalos prácticos",
+    "handmade": "Hechos por ti"
   }
 }

@@ -110,6 +110,7 @@
     "privacy": "Els noms i emails s’envien al servidor i al proveïdor de correu per lliurar cada resultat en privat."
   },
   "email": {
+    "gifts": "Veure idees de regal",
     "subject": "El teu amic invisible",
     "hello": "Hola",
     "gives": "T’ha tocat regalar a…",
@@ -184,37 +185,177 @@
     "items": [
       {
         "title": "Kit de xocolata calenta",
-        "description": "Cacau, núvols de sucre i una tassa per a les tardes de sofà."
+        "description": "Cacau, núvols de sucre i una tassa per a les tardes de sofà.",
+        "group": "food",
+        "symbol": "☕"
       },
       {
         "title": "Un esmorzar a mida",
-        "description": "Prepara una capseta amb els seus sabors preferits."
+        "description": "Prepara una capseta amb els seus sabors preferits.",
+        "group": "food",
+        "symbol": "🥐"
       },
       {
         "title": "Un racó de calma",
-        "description": "Una espelma i una llista de música feta per tu."
+        "description": "Una espelma i una llista de música feta per tu.",
+        "group": "home",
+        "symbol": "🕯️"
       },
       {
         "title": "Mitjons amb personalitat",
-        "description": "Un estampat que només el vostre grup entendria."
+        "description": "Un estampat que només el vostre grup entendria.",
+        "group": "home",
+        "symbol": "🧦"
       },
       {
         "title": "Un quadern d’idees",
-        "description": "Pàgines en blanc i retoladors per començar una cosa bonica."
+        "description": "Pàgines en blanc i retoladors per començar una cosa bonica.",
+        "group": "creative",
+        "symbol": "🎨"
       },
       {
         "title": "Un àlbum de la vostra història",
-        "description": "Fotos, anècdotes i algun moment de vergonya compartida."
+        "description": "Fotos, anècdotes i algun moment de vergonya compartida.",
+        "group": "creative",
+        "symbol": "📸"
       },
       {
         "title": "Val per una tarda junts",
-        "description": "Un passeig, un berenar i els mòbils desats."
+        "description": "Un passeig, un berenar i els mòbils desats.",
+        "group": "experiences",
+        "symbol": "🎟️"
       },
       {
         "title": "Nit de jocs",
-        "description": "Un joc de cartes i el seu aperitiu preferit."
+        "description": "Un joc de cartes i el seu aperitiu preferit.",
+        "group": "experiences",
+        "symbol": "🎲"
+      },
+      {
+        "title": "Sessió de cinema en una capsa",
+        "description": "Crispetes, les seves llaminadures preferides i una pel·lícula triada per a aquella persona.",
+        "group": "food",
+        "symbol": "🍿"
+      },
+      {
+        "title": "Una planta amb nom propi",
+        "description": "Una planta petita amb un test decorat i una targeta de presentació.",
+        "group": "home",
+        "symbol": "🌱"
+      },
+      {
+        "title": "Kit per començar a brodar",
+        "description": "Un bastidor, fils de colors i un disseny senzill per al seu primer projecte.",
+        "group": "creative",
+        "symbol": "🧵"
+      },
+      {
+        "title": "Ruta de llocs pendents",
+        "description": "Dissenya un passeig amb tres parades que sempre dieu que voleu visitar.",
+        "group": "experiences",
+        "symbol": "🗺️"
+      },
+      {
+        "title": "Trofeu al seu talent més peculiar",
+        "description": "Premia la seva habilitat per arribar tard o triar sempre les millors postres.",
+        "group": "funny",
+        "symbol": "🏆"
+      },
+      {
+        "title": "Tassa amb la seva frase de sempre",
+        "description": "Converteix aquella expressió que repeteix a cada trobada en la seva tassa oficial.",
+        "group": "funny",
+        "symbol": "☕"
+      },
+      {
+        "title": "Calendari de bromes internes",
+        "description": "Dotze mesos, dotze records divertits i dates inventades pel vostre grup.",
+        "group": "funny",
+        "symbol": "📅"
+      },
+      {
+        "title": "Mitjons amb la cara de la seva mascota",
+        "description": "Per portar el seu company preferit fins i tot a les reunions més serioses.",
+        "group": "funny",
+        "symbol": "🧦"
+      },
+      {
+        "title": "Una pedra de companyia",
+        "description": "Posa-li nom, prepara-li una capsa i escriu un manual de cures exageradament detallat.",
+        "group": "absurd",
+        "symbol": "🪨"
+      },
+      {
+        "title": "Un cogombret de ganxet",
+        "description": "Un petit personatge amb ulls i un missatge d’ànim totalment desproporcionat.",
+        "group": "absurd",
+        "symbol": "🥒"
+      },
+      {
+        "title": "Un ànec amb càrrec oficial",
+        "description": "Un aneguet de goma amb acreditació de director de migdiades o supervisor del sofà.",
+        "group": "absurd",
+        "symbol": "🦆"
+      },
+      {
+        "title": "Retrat solemne d’un objecte quotidià",
+        "description": "Emmarca una foto de la seva torradora com si fos una obra de museu.",
+        "group": "absurd",
+        "symbol": "🖼️"
+      },
+      {
+        "title": "Kit per posar ordre als cables",
+        "description": "Organitzadors i etiquetes perquè la seva motxilla deixi de ser un niu d’embolics.",
+        "group": "practical",
+        "symbol": "🔌"
+      },
+      {
+        "title": "Llum per a les lectures nocturnes",
+        "description": "Un petit llum de pinça i un punt de llibre amb una dedicatòria.",
+        "group": "practical",
+        "symbol": "📖"
+      },
+      {
+        "title": "Bossa plegable amb un toc personal",
+        "description": "Una bossa reutilitzable amb un dibuix que encaixi amb les seves aficions.",
+        "group": "practical",
+        "symbol": "👜"
+      },
+      {
+        "title": "Una llar per a les seves claus",
+        "description": "Una safateta per a l’entrada, amb una nota: «aquest cop són aquí».",
+        "group": "practical",
+        "symbol": "🗝️"
+      },
+      {
+        "title": "Sobres per obrir quan…",
+        "description": "Escriu missatges per a un dia difícil, una bona notícia o una tarda d’avorriment.",
+        "group": "handmade",
+        "symbol": "✉️"
+      },
+      {
+        "title": "Receptari del vostre grup",
+        "description": "Reuneix les vostres receptes preferides amb notes, dibuixos i algun secret de cuina.",
+        "group": "handmade",
+        "symbol": "📚"
+      },
+      {
+        "title": "La banda sonora de la vostra amistat",
+        "description": "Crea una llista de música i acompanya-la d’una targeta que expliqui cada cançó.",
+        "group": "handmade",
+        "symbol": "🎵"
+      },
+      {
+        "title": "Talonari de petits favors",
+        "description": "Vals fets a mà per a un esmorzar, cuidar les seves plantes o cuinar junts.",
+        "group": "handmade",
+        "symbol": "🎟️"
       }
     ],
-    "navigation": "Navegació principal"
+    "navigation": "Navegació principal",
+    "funny": "Regals divertits",
+    "absurd": "Regals absurds",
+    "practical": "Regals pràctics",
+    "handmade": "Fets per tu"
   }
 }

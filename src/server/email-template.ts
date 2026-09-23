@@ -3,6 +3,7 @@ import type { Game, Participant } from "../game/types.ts";
 
 type Copy = {
   subject: string;
+  gifts: string;
   hello: string;
   gives: string;
   secret: string;
@@ -27,15 +28,21 @@ export function emailTemplate(
   m: Copy,
 ) {
   const identity = legalIdentity();
-  const privacyUrl =
+  const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "");
-  const privacyLink = privacyUrl
+  const privacyLink = siteUrl
     ? new URL(
         `/${["es", "ca", "en"].includes(locale) ? locale : "es"}/legal/privacidad`,
-        privacyUrl,
+        siteUrl,
+      ).href
+    : "";
+  const giftsLink = siteUrl
+    ? new URL(
+        `/${["es", "ca", "en"].includes(locale) ? locale : "es"}#gifts`,
+        siteUrl,
       ).href
     : "";
   const notices: Record<string, string> = {
@@ -61,11 +68,12 @@ export function emailTemplate(
     receiver.name,
     ...details,
     m.secret,
+    ...(giftsLink ? [`${m.gifts}: ${giftsLink}`] : []),
     "Arrow Secret Santa",
     privacyText,
   ].join("\n\n");
   const e = escapeHtml;
-  const html = `<!doctype html><html lang="${e(locale)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body style="margin:0;background:#fff8ea;font-family:Arial,sans-serif;color:#173c2d"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="100%" style="max-width:560px;background:#fffdf7;border-radius:20px" cellpadding="0" cellspacing="0"><tr><td style="padding:36px"><p style="font-size:12px;letter-spacing:2px;color:#b4232f">ARROW SECRET SANTA</p><h1 style="font-size:28px">${e(title)}</h1><p>${e(m.hello)}, ${e(giver.name)}!</p><p>${e(m.gives)}</p><div style="background:#fbe5df;border-radius:12px;padding:24px;font-size:32px;font-weight:bold;overflow-wrap:anywhere;color:#b4232f">${e(receiver.name)}</div>${details.map((line) => `<p style="font-size:15px">${e(line)}</p>`).join("")}<p style="margin-top:28px;color:#65756a;line-height:1.6">${e(m.secret)}</p><hr style="border:0;border-top:1px solid #ddd"><p style="font-size:12px;line-height:1.6;color:#47594e">${e(privacyNotice)} ${privacyLink ? `<a href="${e(privacyLink)}">${e(privacyLink)}</a>` : e(identity.email)}</p></td></tr></table></td></tr></table></body></html>`;
+  const html = `<!doctype html><html lang="${e(locale)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body style="margin:0;background:#fff8ea;font-family:Arial,sans-serif;color:#173c2d"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="100%" style="max-width:560px;background:#fffdf7;border-radius:20px" cellpadding="0" cellspacing="0"><tr><td style="padding:36px"><p style="font-size:12px;letter-spacing:2px;color:#b4232f">ARROW SECRET SANTA</p><h1 style="font-size:28px">${e(title)}</h1><p>${e(m.hello)}, ${e(giver.name)}!</p><p>${e(m.gives)}</p><div style="background:#fbe5df;border-radius:12px;padding:24px;font-size:32px;font-weight:bold;overflow-wrap:anywhere;color:#b4232f">${e(receiver.name)}</div>${details.map((line) => `<p style="font-size:15px">${e(line)}</p>`).join("")}<p style="margin-top:28px;color:#65756a;line-height:1.6">${e(m.secret)}</p>${giftsLink ? `<p style="margin:24px 0"><a href="${e(giftsLink)}" style="display:inline-block;background:#173c2d;color:#fffdf7;padding:14px 22px;border-radius:8px;font-weight:bold;text-decoration:none">${e(m.gifts)}</a></p>` : ""}<hr style="border:0;border-top:1px solid #ddd"><p style="font-size:12px;line-height:1.6;color:#47594e">${e(privacyNotice)} ${privacyLink ? `<a href="${e(privacyLink)}">${e(privacyLink)}</a>` : e(identity.email)}</p></td></tr></table></td></tr></table></body></html>`;
   return {
     subject: `${m.subject} · ${title.replace(/[\r\n]/g, " ")}`,
     text,

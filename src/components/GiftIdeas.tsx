@@ -3,8 +3,16 @@
 import { useState } from "react";
 import type { Messages } from "@/i18n/messages";
 
-const symbols = ["☕", "🥐", "🕯️", "🧦", "🎨", "📸", "🎟️", "🎲"];
-const groups = ["food", "home", "creative", "experiences"] as const;
+const groups = [
+  "food",
+  "home",
+  "creative",
+  "experiences",
+  "funny",
+  "absurd",
+  "practical",
+  "handmade",
+] as const;
 
 export function GiftIdeas({ m }: { m: Messages }) {
   const [category, setCategory] = useState("all");
@@ -13,7 +21,7 @@ export function GiftIdeas({ m }: { m: Messages }) {
     .map((item, index) => ({
       ...item,
       index,
-      group: groups[Math.floor(index / 2)],
+      group: groups.find((group) => group === item.group)!,
     }))
     .filter((item) => category === "all" || item.group === category);
   return (
@@ -43,7 +51,7 @@ export function GiftIdeas({ m }: { m: Messages }) {
         {visible.map((item) => (
           <article className={`gift-card gift-${item.group}`} key={item.index}>
             <div className="gift-art" aria-hidden="true">
-              <span>{symbols[item.index]}</span>
+              <span>{item.symbol}</span>
               <i>✦</i>
               <i>✧</i>
             </div>

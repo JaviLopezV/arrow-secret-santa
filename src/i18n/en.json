@@ -110,6 +110,7 @@
     "privacy": "Names and emails are sent to the server and email provider to deliver each result privately."
   },
   "email": {
+    "gifts": "Explore gift ideas",
     "subject": "Your Secret Santa",
     "hello": "Hello",
     "gives": "You’re giving a gift to…",
@@ -184,37 +185,177 @@
     "items": [
       {
         "title": "Hot chocolate kit",
-        "description": "Cocoa, marshmallows and a mug for cosy afternoons."
+        "description": "Cocoa, marshmallows and a mug for cosy afternoons.",
+        "group": "food",
+        "symbol": "☕"
       },
       {
         "title": "Their kind of breakfast",
-        "description": "Pack a little box with their favourite flavours."
+        "description": "Pack a little box with their favourite flavours.",
+        "group": "food",
+        "symbol": "🥐"
       },
       {
         "title": "A corner of calm",
-        "description": "A candle and a playlist made by you."
+        "description": "A candle and a playlist made by you.",
+        "group": "home",
+        "symbol": "🕯️"
       },
       {
         "title": "Socks with personality",
-        "description": "A pattern only your friend group would understand."
+        "description": "A pattern only your friend group would understand.",
+        "group": "home",
+        "symbol": "🧦"
       },
       {
         "title": "A notebook for bright ideas",
-        "description": "Blank pages and colourful pens to start something lovely."
+        "description": "Blank pages and colourful pens to start something lovely.",
+        "group": "creative",
+        "symbol": "🎨"
       },
       {
         "title": "An album of your story",
-        "description": "Photos, anecdotes and a little shared embarrassment."
+        "description": "Photos, anecdotes and a little shared embarrassment.",
+        "group": "creative",
+        "symbol": "📸"
       },
       {
         "title": "An afternoon together voucher",
-        "description": "A walk, a snack and phones tucked away."
+        "description": "A walk, a snack and phones tucked away.",
+        "group": "experiences",
+        "symbol": "🎟️"
       },
       {
         "title": "Game night",
-        "description": "A card game and their favourite snacks."
+        "description": "A card game and their favourite snacks.",
+        "group": "experiences",
+        "symbol": "🎲"
+      },
+      {
+        "title": "Movie night in a box",
+        "description": "Popcorn, their favourite sweets and a film picked just for them.",
+        "group": "food",
+        "symbol": "🍿"
+      },
+      {
+        "title": "A plant with its own name",
+        "description": "A small plant with a decorated pot and a little introduction card.",
+        "group": "home",
+        "symbol": "🌱"
+      },
+      {
+        "title": "A first embroidery kit",
+        "description": "A hoop, colourful thread and a simple pattern for their first project.",
+        "group": "creative",
+        "symbol": "🧵"
+      },
+      {
+        "title": "A someday walking route",
+        "description": "Plan a walk with three stops you always say you will visit.",
+        "group": "experiences",
+        "symbol": "🗺️"
+      },
+      {
+        "title": "An oddly specific trophy",
+        "description": "Celebrate their talent for arriving late or always picking the best dessert.",
+        "group": "funny",
+        "symbol": "🏆"
+      },
+      {
+        "title": "Their catchphrase mug",
+        "description": "Put the phrase they say at every gathering on their very own mug.",
+        "group": "funny",
+        "symbol": "☕"
+      },
+      {
+        "title": "An inside-joke calendar",
+        "description": "Twelve months of funny memories and occasions invented by your group.",
+        "group": "funny",
+        "symbol": "📅"
+      },
+      {
+        "title": "Pet portrait socks",
+        "description": "Let their favourite companion join even the most serious meetings.",
+        "group": "funny",
+        "symbol": "🧦"
+      },
+      {
+        "title": "A pet rock",
+        "description": "Give it a name, a box and an unnecessarily detailed care manual.",
+        "group": "absurd",
+        "symbol": "🪨"
+      },
+      {
+        "title": "A crochet pickle",
+        "description": "A tiny character with eyes and a wildly enthusiastic motivational note.",
+        "group": "absurd",
+        "symbol": "🥒"
+      },
+      {
+        "title": "A duck with a job title",
+        "description": "A rubber duck with a badge naming it Head of Naps or Sofa Supervisor.",
+        "group": "absurd",
+        "symbol": "🦆"
+      },
+      {
+        "title": "A grand portrait of an everyday object",
+        "description": "Frame a photograph of their toaster as if it belonged in a museum.",
+        "group": "absurd",
+        "symbol": "🖼️"
+      },
+      {
+        "title": "A cable-taming kit",
+        "description": "Cable ties and labels to rescue their bag from tangled wires.",
+        "group": "practical",
+        "symbol": "🔌"
+      },
+      {
+        "title": "A light for late-night reading",
+        "description": "A little clip-on book light and a bookmark with a personal message.",
+        "group": "practical",
+        "symbol": "📖"
+      },
+      {
+        "title": "A foldaway bag with character",
+        "description": "A reusable bag with a design inspired by their hobbies.",
+        "group": "practical",
+        "symbol": "👜"
+      },
+      {
+        "title": "A home for their keys",
+        "description": "A little hallway tray with a note: “this time, they are here”.",
+        "group": "practical",
+        "symbol": "🗝️"
+      },
+      {
+        "title": "Open-when letters",
+        "description": "Write notes for a difficult day, good news or a boring afternoon.",
+        "group": "handmade",
+        "symbol": "✉️"
+      },
+      {
+        "title": "Your group’s recipe book",
+        "description": "Gather favourite recipes with notes, drawings and a few kitchen secrets.",
+        "group": "handmade",
+        "symbol": "📚"
+      },
+      {
+        "title": "Your friendship soundtrack",
+        "description": "Make a playlist with a card explaining the story behind each song.",
+        "group": "handmade",
+        "symbol": "🎵"
+      },
+      {
+        "title": "A little book of favours",
+        "description": "Handmade vouchers for breakfast, plant sitting or cooking together.",
+        "group": "handmade",
+        "symbol": "🎟️"
       }
     ],
-    "navigation": "Main navigation"
+    "navigation": "Main navigation",
+    "funny": "Funny gifts",
+    "absurd": "Absurd gifts",
+    "practical": "Practical gifts",
+    "handmade": "Made by you"
   }
 }
